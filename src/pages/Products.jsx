@@ -94,11 +94,11 @@ export default function Products() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className={`group glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${product.showcase ? 'sm:col-span-2 lg:col-span-3' : ''}`}
+                className={`group glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${product.showcase ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
               >
                 {product.image ? (
-                  <div className={`overflow-hidden relative ${product.showcase ? 'h-80 md:h-[420px]' : 'h-52'}`}>
-                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-75 group-hover:opacity-95" />
+                  <div className={`overflow-hidden relative ${product.showcase ? 'aspect-square' : 'h-52'}`}>
+                    <img src={product.image} alt={product.name} className={`w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-75 group-hover:opacity-95 ${product.showcase ? 'object-contain' : 'object-cover'}`} />
                     {product.badge && (
                       <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-medium tracking-wide">
                         {product.badge}
