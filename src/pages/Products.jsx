@@ -4,7 +4,7 @@ import { Leaf, Droplets, Wine, Cookie, Sparkles, Wrench, MapPin } from 'lucide-r
 
 const FLOWER_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/aac55d1a6_flower.jpg";
 const FLOWER2_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/b86cd6422_flower2.jpg";
-const DRINKS_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/f618baabe_drinks.jpg";
+const DRINKS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd1d1ce9a_Drinks_on_smoky_background_202605031815.jpeg";
 const EDIBLES_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/4470748cb_edibles.jpg";
 const EDIBLES2_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/62fa17251_edibles2.jpg";
 const CONCENTRATE_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd83be047_concentrate.jpg";
@@ -26,8 +26,7 @@ const products = [
   { name: 'Exotic Strains', category: 'flower', price: '$15 – $75', desc: 'Rare and exotic cultivars rotated regularly. Ask our staff about current availability.', image: FLOWER2_IMG, badge: 'Limited' },
   { name: 'Live Resin Concentrates', category: 'concentrates', price: '$25 – $65', desc: 'Full-spectrum live resin for the ultimate terpene experience.', image: CONCENTRATE_IMG },
   { name: 'Wax & Shatter', category: 'concentrates', price: '$20 – $55', desc: 'Premium concentrates in various consistencies. Visit for full selection.', image: null },
-  { name: 'THC Seltzers', category: 'drinks', price: '$6 – $12', desc: 'Brio Pop, Sherpa, Knotty Times and more. Cold and ready to drink.', image: DRINKS_IMG, badge: 'New' },
-  { name: 'Infused Lemonades', category: 'drinks', price: '$8 – $15', desc: 'Smooth, flavorful THC-infused beverages. Perfect for any occasion.', image: null },
+  { name: 'THC Seltzers', category: 'drinks', price: '$6 – $12', desc: 'Brio Pop, Sherpa, Knotty Times and more. Cold and ready to drink.', image: DRINKS_IMG, badge: 'New', showcase: true },
   { name: 'Highly Delicious Baked Goods', category: 'edibles', price: '$8 – $25', desc: 'Fresh baked cookies, brownies, and more from Highly Delicious.', image: EDIBLES_IMG },
   { name: 'Gummies & Chocolates', category: 'edibles', price: '$10 – $35', desc: 'Infused gummies and chocolates in various strengths and flavors.', image: EDIBLES2_IMG },
   { name: 'Artisan Glass Pipes', category: 'glass', price: '$15 – $200+', desc: 'Handblown glass pipes, bubblers, and water pipes from local and national artists.', image: GLASS_IMG },
@@ -95,11 +94,11 @@ export default function Products() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="group glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+                className={`group glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${product.showcase ? 'sm:col-span-2 lg:col-span-3' : ''}`}
               >
                 {product.image ? (
-                  <div className="h-52 overflow-hidden relative">
-                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-90" />
+                  <div className={`overflow-hidden relative ${product.showcase ? 'h-80 md:h-[420px]' : 'h-52'}`}>
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-75 group-hover:opacity-95" />
                     {product.badge && (
                       <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-medium tracking-wide">
                         {product.badge}
