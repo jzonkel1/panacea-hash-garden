@@ -68,11 +68,6 @@ export default function EventsPreview() {
           >
             <div className="relative">
               <img src={AUD2} alt="PANACEA events" className="w-full rounded-2xl shadow-2xl shadow-black/50 opacity-80" />
-              <img
-                src={AUD1}
-                alt="Community event"
-                className="absolute -bottom-8 -left-8 w-48 md:w-64 rounded-xl border-2 border-background shadow-xl opacity-90"
-              />
               <div className="absolute -top-4 -right-4 glass-card rounded-xl px-5 py-3">
                 <p className="text-primary font-display text-2xl font-semibold">100+</p>
                 <p className="text-muted-foreground text-xs">Events hosted</p>
