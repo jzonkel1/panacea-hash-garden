@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const LOGO_URL = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/8c30f1a7c_logo.png";
-const PLANT_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/bfdb86571_1.jpg";
 
 const lines = [
   { text: 'Premium Botanicals.', accent: false },
@@ -16,28 +15,16 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* Deep dark-green base gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_60%_50%,_rgba(20,40,10,0.95)_0%,_rgba(5,5,5,1)_70%)]" />
+      {/* Deep dark base */}
+      <div className="absolute inset-0 bg-[#050505]" />
 
-      {/* Plant image — right side, atmospheric */}
-      <div className="absolute inset-y-0 right-0 w-[55%] pointer-events-none">
-        <img
-          src={PLANT_IMG}
-          alt=""
-          className="w-full h-full object-cover object-center"
-          style={{ opacity: 0.38, mixBlendMode: 'luminosity' }}
-        />
-        {/* Fade left edge of plant */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[rgba(5,5,5,0.55)] to-transparent" />
-        {/* Fade top & bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(5,5,5,0.5)] via-transparent to-[rgba(5,5,5,0.7)]" />
-      </div>
-
-      {/* Cinematic green bloom — centre-left */}
-      <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(80,140,20,0.13) 0%, transparent 65%)' }} />
-      <div className="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] rounded-full pointer-events-none glow-pulse"
-        style={{ background: 'radial-gradient(circle, rgba(154,194,33,0.07) 0%, transparent 60%)' }} />
+      {/* Atmospheric green glows */}
+      <div className="absolute top-[-10%] left-[-5%] w-[700px] h-[700px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(80,140,20,0.14) 0%, transparent 65%)' }} />
+      <div className="absolute bottom-0 right-[10%] w-[600px] h-[600px] rounded-full pointer-events-none glow-pulse"
+        style={{ background: 'radial-gradient(circle, rgba(154,194,33,0.08) 0%, transparent 60%)' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse, rgba(60,110,10,0.07) 0%, transparent 70%)' }} />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-14 py-32 md:py-40">
