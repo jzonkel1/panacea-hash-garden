@@ -7,14 +7,17 @@ const FLOWER_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa
 const FLOWER2_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/b86cd6422_flower2.jpg";
 const DRINKS_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/f618baabe_drinks.jpg";
 const EDIBLES_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/4470748cb_edibles.jpg";
+const CONCENTRATE_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd83be047_concentrate.jpg";
+const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9cf7bd589_grinder.jpg";
+const GLASS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a50809387_glass.JPG";
 
 const categories = [
   { name: 'Flower', desc: 'Hand-selected premium strains', icon: Leaf, image: FLOWER_IMG },
-  { name: 'Concentrates', desc: 'Potent extracts & dabs', icon: Droplets, image: FLOWER2_IMG },
-  { name: 'Glass', desc: 'Artisan pipes & rigs', icon: Sparkles, image: null },
+  { name: 'Concentrates', desc: 'Potent extracts & dabs', icon: Droplets, image: CONCENTRATE_IMG },
+  { name: 'Glass', desc: 'Artisan pipes & rigs', icon: Sparkles, image: GLASS_IMG },
   { name: 'THC Drinks', desc: 'Infused seltzers & beverages', icon: Wine, image: DRINKS_IMG },
   { name: 'Edibles', desc: 'Gummies, baked goods & more', icon: Cookie, image: EDIBLES_IMG },
-  { name: 'Accessories', desc: 'Rolling, storage & essentials', icon: Wrench, image: null },
+  { name: 'Accessories', desc: 'Rolling, storage & essentials', icon: Wrench, image: GRINDER_IMG },
 ];
 
 export default function CategoriesSection() {

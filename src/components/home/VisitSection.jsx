@@ -5,7 +5,8 @@ import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
 export default function VisitSection() {
   return (
     <section className="py-24 px-6 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/3 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/6 to-background" />
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/8 blur-[180px] rounded-full -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">

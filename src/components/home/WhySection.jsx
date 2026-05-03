@@ -34,7 +34,8 @@ export default function WhySection() {
   return (
     <section className="py-24 px-6 relative">
       {/* Ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/4 blur-[200px] rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[180px] rounded-full" />
+      <div className="absolute bottom-0 left-1/4 w-[400px] h-[300px] bg-primary/6 blur-[150px] rounded-full" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
