@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Droplets, Wine, Cookie, Sparkles, Wrench, MapPin } from 'lucide-react';
 
@@ -38,6 +38,12 @@ const products = [
 
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState('all');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('category');
+    if (cat) setActiveCategory(cat);
+  }, []);
 
   const filtered = activeCategory === 'all' ? products : products.filter(p => p.category === activeCategory);
 

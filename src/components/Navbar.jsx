@@ -20,7 +20,7 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,36 +31,54 @@ export default function Navbar() {
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20'
-          : 'bg-transparent'
+          ? 'bg-[rgba(6,10,4,0.82)] backdrop-blur-2xl border-b border-primary/8 shadow-lg shadow-black/30'
+          : 'bg-[rgba(4,8,3,0.35)] backdrop-blur-md'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={LOGO_URL} alt="PANACEA" className="h-8 w-auto" />
-            <span className="font-display text-lg tracking-[0.2em] font-medium hidden sm:block">PANACEA</span>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
+
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <img src={LOGO_URL} alt="PANACEA" className="h-6 w-auto" />
+            <span className="font-display text-sm tracking-[0.22em] font-medium text-[#d8d8d0] hidden sm:block">PANACEA</span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map(link => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm tracking-widest uppercase transition-colors duration-300 ${
-                  location.pathname === link.path
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center gap-7">
+            {NAV_LINKS.map(link => {
+              const active = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative text-[11px] tracking-[0.18em] uppercase transition-colors duration-300 pb-0.5 ${
+                    active ? 'text-primary' : 'text-[#8a8a80] hover:text-[#d0d0c8]'
+                  }`}
+                >
+                  {link.label}
+                  {active && (
+                    <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-primary/60 rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Visit Us CTA */}
+          <div className="hidden md:block shrink-0">
+            <a
+              href="https://maps.google.com/?q=4914+Everhart+Rd+Corpus+Christi+TX+78411"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-full border border-white/12 bg-white/4 text-[11px] tracking-[0.18em] uppercase text-[#c8c8c0] transition-all duration-300 hover:border-primary/35 hover:bg-primary/8 hover:text-white"
+            >
+              Visit Us
+            </a>
           </div>
 
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-foreground p-2"
+            className="md:hidden text-[#a0a098] p-1.5"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -71,18 +89,18 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl pt-24 px-8"
+            exit={{ opacity: 0, y: -8 }}
+            className="fixed inset-0 z-40 bg-[rgba(4,8,3,0.97)] backdrop-blur-2xl pt-20 px-8"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-5">
               {NAV_LINKS.map(link => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-2xl font-display tracking-widest transition-colors ${
-                    location.pathname === link.path ? 'text-primary' : 'text-foreground/70'
+                  className={`text-2xl font-display tracking-wide transition-colors ${
+                    location.pathname === link.path ? 'text-primary' : 'text-[#7a7a72]'
                   }`}
                 >
                   {link.label}
@@ -90,8 +108,8 @@ export default function Navbar() {
               ))}
             </div>
             <div className="mt-12 pt-8 border-t border-white/5">
-              <p className="text-muted-foreground text-sm">4914 Everhart Rd, Corpus Christi, TX</p>
-              <p className="text-muted-foreground text-sm">(361) 261-3880</p>
+              <p className="text-[#555550] text-sm">4914 Everhart Rd, Corpus Christi, TX</p>
+              <p className="text-[#555550] text-sm mt-1">(361) 261-3880</p>
             </div>
           </motion.div>
         )}

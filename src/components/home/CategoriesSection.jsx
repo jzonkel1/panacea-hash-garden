@@ -12,12 +12,12 @@ const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c
 const GLASS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a50809387_glass.JPG";
 
 const categories = [
-  { name: 'Flower', desc: 'Hand-selected premium strains', icon: Leaf, image: FLOWER_IMG },
-  { name: 'Concentrates', desc: 'Potent extracts & dabs', icon: Droplets, image: CONCENTRATE_IMG },
-  { name: 'Glass', desc: 'Artisan pipes & rigs', icon: Sparkles, image: GLASS_IMG },
-  { name: 'THC Drinks', desc: 'Infused seltzers & beverages', icon: Wine, image: DRINKS_IMG },
-  { name: 'Edibles', desc: 'Gummies, baked goods & more', icon: Cookie, image: EDIBLES_IMG },
-  { name: 'Accessories', desc: 'Rolling, storage & essentials', icon: Wrench, image: GRINDER_IMG },
+  { name: 'Flower', id: 'flower', desc: 'Hand-selected premium strains', icon: Leaf, image: FLOWER_IMG },
+  { name: 'Concentrates', id: 'concentrates', desc: 'Potent extracts & dabs', icon: Droplets, image: CONCENTRATE_IMG },
+  { name: 'Glass', id: 'glass', desc: 'Artisan pipes & rigs', icon: Sparkles, image: GLASS_IMG },
+  { name: 'THC Drinks', id: 'drinks', desc: 'Infused seltzers & beverages', icon: Wine, image: DRINKS_IMG },
+  { name: 'Edibles', id: 'edibles', desc: 'Gummies, baked goods & more', icon: Cookie, image: EDIBLES_IMG },
+  { name: 'Accessories', id: 'accessories', desc: 'Rolling, storage & essentials', icon: Wrench, image: GRINDER_IMG },
 ];
 
 export default function CategoriesSection() {
@@ -41,7 +41,7 @@ export default function CategoriesSection() {
                 transition={{ delay: i * 0.1 }}
               >
                 <Link
-                  to="/products"
+                  to={`/products?category=${cat.id}`}
                   className="group block glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
                 >
                   {cat.image ? (

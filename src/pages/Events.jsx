@@ -110,7 +110,7 @@ export default function Events() {
       <div className="px-6 mb-24">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-10 text-center">Past Events</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div style={{ columnCount: 3, columnGap: '16px' }} className="[column-count:2] md:[column-count:3]">
             {[COMEDY1, COMEDY2, COMEDY3, COMEDY4, MUSIC1, COFFTEA, CATERING, AUD1, AUD2].map((img, i) => (
               <motion.div
                 key={i}
@@ -118,9 +118,9 @@ export default function Events() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="rounded-2xl overflow-hidden border border-white/5"
+                className="rounded-2xl overflow-hidden border border-white/5 mb-4 break-inside-avoid"
               >
-                <img src={img} alt="Past PANACEA event" className="w-full h-56 object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
+                <img src={img} alt="Past PANACEA event" className="w-full h-auto block opacity-80 hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
             ))}
           </div>
