@@ -94,7 +94,7 @@ export default function HeroSection() {
       <ParticleCanvas />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-6xl mx-auto px-8 md:px-14 py-16 md:py-20">
+      <div className="relative z-20 w-full max-w-6xl mx-auto px-8 md:px-14 pt-28 md:pt-32 pb-8">
 
         {/* Logo */}
         <motion.div
@@ -168,7 +168,7 @@ export default function HeroSection() {
 
         {/* Footer disclaimer */}
         <motion.p
-          className="mt-14 text-[#555550] text-[10px] tracking-[0.35em] uppercase"
+          className="mt-6 text-[#555550] text-[10px] tracking-[0.35em] uppercase"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
