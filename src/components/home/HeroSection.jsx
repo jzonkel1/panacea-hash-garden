@@ -63,7 +63,7 @@ function ParticleCanvas() {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative h-[85vh] flex items-center overflow-hidden">
 
       {/* Full-bleed background photo */}
       <div className="absolute inset-0">
@@ -94,7 +94,7 @@ export default function HeroSection() {
       <ParticleCanvas />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-6xl mx-auto px-8 md:px-14 py-32 md:py-40">
+      <div className="relative z-20 w-full max-w-6xl mx-auto px-8 md:px-14 py-16 md:py-20">
 
         {/* Logo */}
         <motion.div
