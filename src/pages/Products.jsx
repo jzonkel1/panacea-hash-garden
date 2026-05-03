@@ -6,7 +6,7 @@ const FLOWER_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa
 const FLOWER2_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/b86cd6422_flower2.jpg";
 const DRINKS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd1d1ce9a_Drinks_on_smoky_background_202605031815.jpeg";
 const EDIBLES_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/4470748cb_edibles.jpg";
-const EDIBLES2_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/62fa17251_edibles2.jpg";
+const EDIBLES2_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e13164316_generated_image.png";
 const CONCENTRATE_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd83be047_concentrate.jpg";
 const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9cf7bd589_grinder.jpg";
 const GLASS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a50809387_glass.JPG";
@@ -30,7 +30,6 @@ const products = [
   { name: 'Highly Delicious Baked Goods', category: 'edibles', price: '$8 – $25', desc: 'Fresh baked cookies, brownies, and more from Highly Delicious.', image: EDIBLES_IMG },
   { name: 'Gummies & Chocolates', category: 'edibles', price: '$10 – $35', desc: 'Infused gummies and chocolates in various strengths and flavors.', image: EDIBLES2_IMG },
   { name: 'Artisan Glass Pipes', category: 'glass', price: '$15 – $200+', desc: 'Handblown glass pipes, bubblers, and water pipes from local and national artists.', image: GLASS_IMG },
-  { name: 'Dab Rigs', category: 'glass', price: '$35 – $300+', desc: 'Premium rigs for concentrates. From starter sets to collector pieces.', image: null },
   { name: 'Rolling Papers & Wraps', category: 'accessories', price: '$2 – $15', desc: 'RAW, Elements, hemp wraps, and more. All the essentials.', image: null },
   { name: 'Storage & Accessories', category: 'accessories', price: '$5 – $50', desc: 'Grinders, stash jars, trays, lighters, and everything you need.', image: GRINDER_IMG },
 ];
