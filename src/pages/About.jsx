@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Leaf, Heart, Eye, Sparkles, Award } from 'lucide-react';
+import { Leaf, Heart, Eye, Sparkles, Award, FlaskConical, Cookie, Wheat } from 'lucide-react';
 
 const LOGO_URL = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/39d8c112f_logo.png";
 const FLOWER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/c7cf5b37c_flower2.jpg";
@@ -88,6 +88,73 @@ export default function About() {
               "We approach every product, every interaction, and every event with the same intention—quality over quantity, depth over flash, and people over profit. PANACEA isn't just where you shop. It's where you belong."
             </p>
             <div className="mt-6 text-primary text-sm tracking-[0.3em] uppercase font-medium">— The PANACEA Team</div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Craft Production Section */}
+      <div className="px-6 mb-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Grown. Made. Crafted.</p>
+            <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-4">We Make What We Sell</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Most shops source from a catalog. We grow our own. PANACEA controls the entire process — from seed to shelf — so you always know exactly what you're getting.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              {
+                icon: Leaf,
+                title: 'Our Own Flower',
+                desc: 'Every strain of flower we carry is cultivated in-house. We grow it, cure it, and bring it straight to you — no middlemen, no mystery.',
+              },
+              {
+                icon: FlaskConical,
+                title: 'In-House Concentrates',
+                desc: 'Our concentrates are crafted from our own harvests. From live rosin to pressed hash, everything is made with precision and care.',
+              },
+              {
+                icon: Cookie,
+                title: 'Homemade Edibles',
+                desc: 'We make our own edibles in-house with clean ingredients and exact dosing. No mass-produced mystery — just good, intentional product.',
+              },
+              {
+                icon: Wheat,
+                title: 'Local Baker Collabs',
+                desc: 'When we source baked goods, we partner with local Corpus Christi bakers we trust. Community first, always.',
+              },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="glass-card glass-card-hover rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold mb-3 tracking-wide">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card rounded-2xl px-8 py-6 text-center border border-primary/15"
+          >
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mx-auto">
+              <span className="text-foreground font-medium">Transparency isn't a buzzword here — it's how we operate.</span> When you buy flower from PANACEA, it came from our farm. When you grab a concentrate, we made it. That's a level of quality control you won't find at most shops in South Texas.
+            </p>
           </motion.div>
         </div>
       </div>

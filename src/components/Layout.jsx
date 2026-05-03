@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import AgeGate from './AgeGate';
 import { AnimatePresence } from 'framer-motion';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 export default function Layout() {
   const [ageVerified, setAgeVerified] = useState(false);
@@ -21,6 +27,7 @@ export default function Layout() {
 
       {ageVerified && (
         <>
+          <ScrollToTop />
           <Navbar />
           <main className="relative z-[2]">
             <Outlet />
