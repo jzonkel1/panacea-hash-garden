@@ -103,7 +103,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
         >
-          <img src={LOGO_URL} alt="PANACEA" className="h-14 md:h-16 w-auto" />
+          <img src={LOGO_URL} alt="PANACEA" className="h-20 md:h-24 w-auto" />
         </motion.div>
 
         {/* Eyebrow */}

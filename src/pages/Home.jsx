@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from '../components/home/HeroSection';
+import TrustBar from '../components/home/TrustBar';
 import CategoriesSection from '../components/home/CategoriesSection';
 import WhySection from '../components/home/WhySection';
 import EventsPreview from '../components/home/EventsPreview';
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
+      <TrustBar />
       <CategoriesSection />
       <WhySection />
       <ReviewsSection />
