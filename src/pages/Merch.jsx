@@ -2,14 +2,40 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
+// Hats
 const HAT1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/55174b4f5_hat1.jpg";
 const HAT2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/254be84d6_hat2.jpg";
-const CAP1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/2906c763e_baseballcap1.jpg";
-const CAP2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/5a4aedb00_baseballcap2.jpg";
-const VEST1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/8f61aa9b0_vest1.jpg";
-const VEST2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/79bcf16c0_vest2.jpg";
-const SHIRT1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/5eca9c129_othershirt1.jpg";
-const SHIRT2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/9c2bb03d5_othershirt2.jpg";
+const CAP1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dac9d2066_baseballcap1.jpg";
+const CAP2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/f2168c53b_baseballcap2.jpg";
+const CAP3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7ea65e7fa_cap1.jpg";
+const CAP4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/d624512db_cap2.jpg";
+const HAT3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2f5df0879_hat1.jpg";
+const HAT4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/6ab2782e0_hat2.jpg";
+const HAT5 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/495baacff_hat3.jpg";
+// Hoodies
+const HOODIE1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/6ed21bdb1_hoodie1.jpg";
+const HOODIE2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4d2f9be28_hoodie2.jpg";
+const HOODIE3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/d2139506f_otherhoodie1.jpg";
+const HOODIE4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e6407b193_otherhoodie2.jpg";
+// Vests
+const VEST1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/250c5994f_vest1.jpg";
+const VEST2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5549df18e_vest2.jpg";
+// Shirts
+const SHIRT1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/576dbb420_othershirt1.jpg";
+const SHIRT2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/95f5150e5_othershirt2.jpg";
+const SHIRT3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/73122d399_shirt1.jpg";
+// Jackets
+const JACKET1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cc7bf6ecb_jacket1.jpg";
+const JACKET2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7570c256a_jacket2.jpg";
+// Shoes & Bags
+const SHOES1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/ef29a4942_shoes1.jpg";
+const SHOES2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/86cc254fa_shoes2.jpg";
+const OSHOES1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/041f5f629_othershoes1.jpg";
+const OSHOES2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/260a78e5c_othershoes2.jpg";
+const BACKPACK = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/38d15e3f4_backpack.jpg";
+// Merch store photos
+const MERCH1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a54544c32_merch.jpg";
+const MERCH2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/8960807d0_merch2.jpg";
 
 const merchItems = [
   {
@@ -20,8 +46,14 @@ const merchItems = [
   },
   {
     name: 'Rope Snapback – Yellow',
-    desc: 'Relaxed fit snapback with embroidered logo and Texas flag detail on back.',
+    desc: 'Relaxed fit snapback with embroidered PANACEA logo and Texas flag detail on back.',
     images: [CAP1, CAP2],
+    featured: true,
+  },
+  {
+    name: 'Rope Snapback – Stone',
+    desc: 'Clean stone-grey snapback with PANACEA embroidery and Texas flag accent.',
+    images: [CAP3, CAP4],
     featured: true,
   },
   {
@@ -31,9 +63,63 @@ const merchItems = [
     featured: true,
   },
   {
+    name: 'Champion Tie-Dye Hoodie',
+    desc: 'Crystal tie-dye Champion hoodie with embroidered PANACEA logo.',
+    images: [HOODIE1, HOODIE2],
+    featured: false,
+  },
+  {
+    name: 'PANACEA Eco Hoodie',
+    desc: 'Eco-friendly premium hoodie with PANACEA Hash Garden branding.',
+    images: [HOODIE3, HOODIE4],
+    featured: false,
+  },
+  {
+    name: 'Champion Camo Jacket',
+    desc: 'Champion packable jacket in camo with gold PANACEA embroidery.',
+    images: [JACKET1, JACKET2],
+    featured: false,
+  },
+  {
     name: 'PANACEA Pattern Tee',
     desc: 'All-over print tee with repeating PANACEA emblem pattern. Lightweight and clean.',
     images: [SHIRT1, SHIRT2],
+    featured: false,
+  },
+  {
+    name: 'PANACEA Gardening Crop Tee',
+    desc: '"I\'d Rather Be Gardening" crop tee with PANACEA Hash Garden seal.',
+    images: [SHIRT3],
+    featured: false,
+  },
+  {
+    name: 'Botanical Slip-On Shoes – Pink',
+    desc: 'Custom all-over print slip-ons with PANACEA botanical mandala design.',
+    images: [SHOES1, SHOES2],
+    featured: false,
+  },
+  {
+    name: 'Botanical Slip-On Shoes – Blue',
+    desc: 'Bold blue PANACEA mandala slip-ons. Statement footwear.',
+    images: [OSHOES1, OSHOES2],
+    featured: false,
+  },
+  {
+    name: 'PANACEA Backpack',
+    desc: 'All-over logo print backpack. Carry the garden with you.',
+    images: [BACKPACK],
+    featured: false,
+  },
+  {
+    name: 'Yellow Rope Cap – Beach Edition',
+    desc: 'The classic PANACEA yellow rope cap as seen at the coast.',
+    images: [HAT3, HAT4],
+    featured: false,
+  },
+  {
+    name: 'PANACEA Tropical Tee',
+    desc: 'Vibrant full-print psychedelic botanical tee. Paired with the Hash Garden rope cap.',
+    images: [HAT5],
     featured: false,
   },
 ];

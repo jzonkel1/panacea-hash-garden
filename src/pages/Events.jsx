@@ -8,6 +8,13 @@ import { toast } from 'sonner';
 
 const AUD1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/7b302f861_audience.jpg";
 const AUD2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/f201220af_audience2.jpg";
+const COMEDY1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7ea37424d_comedy1.jpg";
+const COMEDY2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/b15629c27_comedy2.jpg";
+const COMEDY3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/03a32916e_comedy3.jpg";
+const COMEDY4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/1c090ee5a_comedy4.jpg";
+const MUSIC1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/081328a46_music1.jpg";
+const COFFTEA = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/f446d36e1_coffeetea.jpg";
+const CATERING = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/759d9388b_catering.jpg";
 
 const upcomingEvents = [
   { title: 'Comedy Night at PANACEA', date: 'May 17, 2026', time: '8:00 PM', type: 'Comedy', icon: Mic, desc: 'Live stand-up comedy in the backyard. Bring your chairs and your sense of humor.' },
@@ -118,17 +125,17 @@ export default function Events() {
       <div className="px-6 mb-24">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-10 text-center">Past Events</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {pastGallery.map((img, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[COMEDY1, COMEDY2, COMEDY3, COMEDY4, MUSIC1, COFFTEA, CATERING, AUD1, AUD2].map((img, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
+                transition={{ delay: i * 0.08 }}
                 className="rounded-2xl overflow-hidden border border-white/5"
               >
-                <img src={img} alt="Past PANACEA event" className="w-full h-72 object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
+                <img src={img} alt="Past PANACEA event" className="w-full h-56 object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
             ))}
           </div>

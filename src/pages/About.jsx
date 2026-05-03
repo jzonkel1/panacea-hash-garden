@@ -2,8 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Heart, Eye, Sparkles, Award } from 'lucide-react';
 
-const LOGO_URL = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/8c30f1a7c_logo.png";
-const FLOWER_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/b86cd6422_flower2.jpg";
+const LOGO_URL = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/39d8c112f_logo.png";
+const FLOWER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/c7cf5b37c_flower2.jpg";
+const OWNER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/414ba8ad0_owner.jpg";
+const GROW1_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/1701a1c93_grow1.jpg";
+const FARMS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2a962baf2_farms.jpg";
+const BUD1_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2ccd4c444_bud.jpg";
+const BUD2_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a9aa728f2_bud2.jpg";
 
 const values = [
   {
@@ -58,7 +63,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <img src={FLOWER_IMG} alt="Premium flower" className="rounded-2xl shadow-2xl shadow-black/50 opacity-80 w-full" />
+              <img src={OWNER_IMG} alt="PANACEA founder" className="rounded-2xl shadow-2xl shadow-black/50 opacity-90 w-full object-cover" />
               <div className="absolute -bottom-6 -left-6 glass-card rounded-xl p-5">
                 <img src={LOGO_URL} alt="PANACEA" className="h-12 w-auto" />
               </div>
@@ -93,6 +98,15 @@ export default function About() {
           <div className="text-center mb-16">
             <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">What Drives Us</p>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Our Values</h2>
+          </div>
+
+          {/* Farm gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {[GROW1_IMG, FARMS_IMG, BUD1_IMG, BUD2_IMG].map((img, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="rounded-xl overflow-hidden aspect-square">
+                <img src={img} alt="PANACEA cultivation" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
+              </motion.div>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
