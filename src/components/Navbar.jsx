@@ -37,9 +37,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <img src={LOGO_URL} alt="PANACEA" className="h-6 w-auto" />
-            <span className="font-display text-sm tracking-[0.22em] font-medium text-[#d8d8d0] hidden sm:block">PANACEA</span>
+          <Link to="/" className="flex items-center shrink-0">
+            <img src={LOGO_URL} alt="PANACEA" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop nav */}
