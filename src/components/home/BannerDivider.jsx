@@ -4,7 +4,7 @@ const BANNER_URL = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c1
 
 export default function BannerDivider() {
   return (
-    <div className="w-full overflow-hidden" style={{ height: '80px' }}>
+    <div className="w-full overflow-hidden" style={{ height: '180px' }}>
       <img
         src={BANNER_URL}
         alt=""
