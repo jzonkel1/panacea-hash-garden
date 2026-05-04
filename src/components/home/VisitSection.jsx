@@ -83,7 +83,7 @@ export default function VisitSection() {
             </div>
 
             <a
-              href="https://maps.google.com/?q=4914+Everhart+Rd+Corpus+Christi+TX+78411"
+              href="https://maps.app.goo.gl/3fttYBiGaeRzKdMC6"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-10 inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wide hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20 w-fit"

@@ -41,7 +41,7 @@ export default function About() {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
-    if (!philosophyRef.current) return;
+    if (!philosophyRef.current || window.innerWidth < 768) return;
     const rect = philosophyRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -53,6 +53,7 @@ export default function About() {
   };
 
   const handleMouseLeave = () => {
+    if (window.innerWidth < 768) return;
     setRotate({ x: 0, y: 0 });
   };
 

@@ -196,23 +196,33 @@ export default function ReviewsSection() {
         )}
 
         {/* CTA */}
-        <motion.div
-          className="text-center mt-4"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <p className="text-white/45 text-sm tracking-wide mb-6">
-            Come see why locals keep coming back.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#9AC221] text-[#0a0b09] font-semibold tracking-wide hover:bg-[#b0d828] transition-all hover:shadow-lg hover:shadow-[#9AC221]/25 text-sm"
-          >
-            Visit Panacea
-          </Link>
-        </motion.div>
+         <motion.div
+           className="text-center mt-4 flex flex-col sm:flex-row gap-4 justify-center items-center"
+           initial={{ opacity: 0, y: 16 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.6, delay: 0.2 }}
+         >
+           <div>
+             <p className="text-white/45 text-sm tracking-wide mb-6">
+               Come see why locals keep coming back.
+             </p>
+             <Link
+               to="/contact"
+               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#9AC221] text-[#0a0b09] font-semibold tracking-wide hover:bg-[#b0d828] transition-all hover:shadow-lg hover:shadow-[#9AC221]/25 text-sm"
+             >
+               Visit Panacea
+             </Link>
+           </div>
+           <a
+             href="https://search.google.com/local/writereview?placeid=ChIJP5AF1nF9aIYRz-cYtGDfr0c"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white/10 border border-white/20 text-white font-semibold tracking-wide hover:bg-white/20 transition-all text-sm"
+           >
+             Leave a Review ⭐
+           </a>
+         </motion.div>
       </div>
     </section>
   );
