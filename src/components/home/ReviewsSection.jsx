@@ -134,12 +134,12 @@ export default function ReviewsSection() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.22,
+          opacity: 0.55,
           zIndex: 0,
         }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#0a0b09]/80" style={{ zIndex: 1 }} />
+      <div className="absolute inset-0 bg-[#0a0b09]/60" style={{ zIndex: 1 }} />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#9AC221]/5 blur-[120px]" style={{ zIndex: 1 }} />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full bg-[#9AC221]/4 blur-[150px]" style={{ zIndex: 1 }} />
 
