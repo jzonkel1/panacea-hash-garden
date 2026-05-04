@@ -181,6 +181,7 @@ export default function About() {
                  <div>
                    <p className="text-sm font-medium text-foreground">Rene Pena</p>
                    <p className="text-xs text-muted-foreground">Owner & Operator, PANACEA</p>
+                   <p className="text-xs text-muted-foreground/70 mt-1">December 6, 2025</p>
                  </div>
                </div>
 
