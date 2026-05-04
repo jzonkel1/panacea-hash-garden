@@ -94,7 +94,7 @@ export default function HeroSection() {
       <ParticleCanvas />
 
       {/* Content */}
-      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-28 md:pt-32 pb-8">
+      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-20 md:pt-32 pb-8 flex flex-col items-center md:items-start text-center md:text-left">
 
         {/* Logo */}
         <motion.div
@@ -121,7 +121,7 @@ export default function HeroSection() {
           {lines.map((line, i) => (
             <motion.span
               key={i}
-              className={`block text-5xl md:text-7xl lg:text-[82px] font-medium tracking-tight ${
+              className={`block text-4xl md:text-7xl lg:text-[82px] font-medium tracking-tight ${
                 line.accent ? 'text-primary' : 'text-[#e8e8df]'
               }`}
               style={{ textShadow: line.accent ? '0 0 60px rgba(154,194,33,0.35)' : '0 2px 40px rgba(0,0,0,0.8)' }}
@@ -136,7 +136,7 @@ export default function HeroSection() {
 
         {/* Body */}
         <motion.p
-          className="text-[#9a9a8e] text-base md:text-lg leading-relaxed max-w-md mb-12 font-light"
+          className="text-[#9a9a8e] text-base md:text-lg leading-relaxed max-w-md mb-12 font-light mx-auto md:mx-0"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 1.05 }}
@@ -146,7 +146,7 @@ export default function HeroSection() {
 
         {/* CTAs */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-4 items-center md:items-start"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 1.2 }}

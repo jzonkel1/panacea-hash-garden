@@ -12,8 +12,21 @@ const items = [
 export default function TrustBar() {
   return (
     <div className="relative z-10 bg-black/60 border-y border-white/6 backdrop-blur-md">
-      <div className="max-w-6xl mx-auto px-6 py-5">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-white/8">
+      {/* Mobile: horizontal scroll strip */}
+      <div className="md:hidden flex overflow-x-auto scrollbar-hide gap-4 px-4 py-3">
+        {items.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <div key={item.label} className="flex items-center gap-2 shrink-0">
+              <Icon className="w-3.5 h-3.5 text-primary shrink-0" />
+              <span className="text-xs font-medium text-foreground whitespace-nowrap">{item.label}</span>
+            </div>
+          );
+        })}
+      </div>
+      {/* Desktop: original grid */}
+      <div className="hidden md:block max-w-6xl mx-auto px-6 py-5">
+        <div className="grid grid-cols-4 gap-0 divide-x divide-white/8">
           {items.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -22,7 +35,7 @@ export default function TrustBar() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                className="flex items-center gap-3 px-4 md:px-6"
+                className="flex items-center gap-3 px-6"
               >
                 <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <Icon className="w-4 h-4 text-primary" />
