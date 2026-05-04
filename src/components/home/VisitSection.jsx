@@ -14,28 +14,22 @@ export default function VisitSection() {
           <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Visit the Shop</h2>
         </div>
 
-        {/* Shop photo */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden mb-12"
-        >
-          <img
-            src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9e3168c89_unnamed2.jpg"
-            alt="PANACEA Hash Garden storefront and sign"
-            className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-          />
-        </motion.div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Map */}
+          {/* Map + Photo stacked */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden border border-white/5 h-[400px]"
+            className="flex flex-col gap-4"
           >
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9e3168c89_unnamed2.jpg"
+                alt="PANACEA Hash Garden storefront and sign"
+                className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-white/5 h-[400px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.5!2d-97.389!3d27.729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z4914+Everhart+Rd+Corpus+Christi+TX!5e0!3m2!1sen!2sus!4v1"
               width="100%"
@@ -45,6 +39,7 @@ export default function VisitSection() {
               loading="lazy"
               title="PANACEA Location"
             />
+            </div>
           </motion.div>
 
           {/* Info */}
