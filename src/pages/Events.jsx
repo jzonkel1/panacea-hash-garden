@@ -33,10 +33,10 @@ export default function Events() {
       {/* Hero */}
       <div className="relative h-[70vh] w-full overflow-hidden mb-24">
         <img
-          src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a408d105a_audience2.jpg"
-          alt="PANACEA Events"
-          className="w-full h-full object-cover object-center"
-        />
+           src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/53ba46053_event.jpg"
+           alt="PANACEA Events"
+           className="w-full h-full object-cover object-center"
+         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 text-center px-6">
           <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">Culture & Community</p>
