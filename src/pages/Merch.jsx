@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Send } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 // Hats
 const HAT1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/55174b4f5_hat1.jpg";
@@ -94,13 +98,13 @@ const merchItems = [
   },
   {
     name: 'Botanical Slip-On Shoes – Pink',
-    desc: 'Custom all-over print slip-ons with PANACEA botanical mandala design.',
+    desc: 'Bold pink PANACEA mandala slip-ons. Statement footwear.',
     images: [SHOES1, SHOES2],
     featured: false,
   },
   {
     name: 'Botanical Slip-On Shoes – Blue',
-    desc: 'Bold blue PANACEA mandala slip-ons. Statement footwear.',
+    desc: 'Custom all-over print slip-ons with PANACEA botanical mandala design.',
     images: [OSHOES1, OSHOES2],
     featured: false,
   },
@@ -111,12 +115,6 @@ const merchItems = [
     featured: false,
   },
   {
-    name: 'Yellow Rope Cap – Beach Edition',
-    desc: 'The classic PANACEA yellow rope cap as seen at the coast.',
-    images: [HAT3, HAT4],
-    featured: false,
-  },
-  {
     name: 'PANACEA Tropical Tee',
     desc: 'Vibrant full-print psychedelic botanical tee. Paired with the Hash Garden rope cap.',
     images: [HAT5],
@@ -124,7 +122,17 @@ const merchItems = [
   },
 ];
 
+const MERCH_STORE_URL = "#";
+
 export default function Merch() {
+  const [form, setForm] = useState({ name: '', email: '', idea: '' });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success('Thanks for your idea! We\'ll take a look.');
+    setForm({ name: '', email: '', idea: '' });
+  };
+
   return (
     <div className="pb-24 min-h-screen">
       {/* Hero */}
@@ -138,9 +146,18 @@ export default function Merch() {
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-6">
           <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Wear the Brand</p>
           <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-wide mb-4 text-white">PANACEA Merch</h1>
-          <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/70 max-w-2xl mx-auto leading-relaxed mb-8">
             Rep the garden. Our curated line of branded merch is available through our official online store.
           </p>
+          <a
+            href={MERCH_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wide hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20"
+          >
+            Visit Merch Store
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
 
@@ -201,12 +218,12 @@ export default function Merch() {
       </div>
 
       {/* CTA */}
-      <div className="px-6">
+      <div className="px-6 mb-16">
         <div className="max-w-3xl mx-auto text-center glass-card rounded-2xl p-10">
           <h3 className="font-display text-2xl font-semibold mb-3 tracking-wide">Shop the Full Collection</h3>
           <p className="text-muted-foreground mb-6">Visit our official merch store to browse sizes, colors, and place your order.</p>
           <a
-            href="#"
+            href={MERCH_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wide hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20"
@@ -215,6 +232,59 @@ export default function Merch() {
             <ExternalLink className="w-4 h-4" />
           </a>
           <p className="text-muted-foreground/40 text-xs mt-4">Opens in new tab · Powered by Printful</p>
+        </div>
+      </div>
+
+      {/* Merch Ideas Form */}
+      <div className="px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="glass-card rounded-2xl p-10">
+            <div className="text-center mb-10">
+              <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Shape the Collection</p>
+              <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-3">Got a Merch Idea?</h2>
+              <p className="text-muted-foreground text-sm">
+                We love hearing from the community. Submit your ideas for new designs, colorways, or products — we actually read these.
+              </p>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label className="text-xs text-muted-foreground mb-1.5 block tracking-wide">Your Name</label>
+                  <Input
+                    value={form.name}
+                    onChange={e => setForm({ ...form, name: e.target.value })}
+                    required
+                    className="bg-white/5 border-white/10 focus:border-primary/50"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-muted-foreground mb-1.5 block tracking-wide">Email</label>
+                  <Input
+                    type="email"
+                    value={form.email}
+                    onChange={e => setForm({ ...form, email: e.target.value })}
+                    required
+                    className="bg-white/5 border-white/10 focus:border-primary/50"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="text-xs text-muted-foreground mb-1.5 block tracking-wide">Your Idea or Suggestion</label>
+                <Textarea
+                  value={form.idea}
+                  onChange={e => setForm({ ...form, idea: e.target.value })}
+                  placeholder="Describe your idea — a new product, design concept, colorway, or anything else you'd like to see from PANACEA."
+                  rows={5}
+                  required
+                  className="bg-white/5 border-white/10 focus:border-primary/50"
+                />
+              </div>
+              <Button type="submit" className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide">
+                <Send className="w-4 h-4 mr-2" />
+                Submit Idea
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -65,7 +65,11 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <img src={OWNER_IMG} alt="PANACEA founder" className="rounded-2xl shadow-2xl shadow-black/50 opacity-90 w-full object-cover" />
+              <img src={OWNER_IMG} alt="Rene Pena, Founder of PANACEA" className="rounded-2xl shadow-2xl shadow-black/50 opacity-90 w-full object-cover" />
+              <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-2 text-sm">
+                <p className="font-medium text-foreground">Rene Pena</p>
+                <p className="text-xs text-muted-foreground">Founder, PANACEA</p>
+              </div>
               <div className="absolute -bottom-6 -left-6 glass-card rounded-xl p-5">
                 <img src={LOGO_URL} alt="PANACEA" className="h-12 w-auto" />
               </div>
@@ -89,7 +93,7 @@ export default function About() {
             <p className="text-muted-foreground leading-relaxed text-lg max-w-2xl mx-auto">
               "We approach every product, every interaction, and every event with the same intention—quality over quantity, depth over flash, and people over profit. PANACEA isn't just where you shop. It's where you belong."
             </p>
-            <div className="mt-6 text-primary text-sm tracking-[0.3em] uppercase font-medium">— The PANACEA Team</div>
+            <div className="mt-6 text-primary text-sm tracking-[0.3em] uppercase font-medium">— Rene Pena, Founder</div>
           </motion.div>
         </div>
       </div>

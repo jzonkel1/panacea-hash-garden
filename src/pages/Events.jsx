@@ -6,17 +6,16 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
+const COMEDY_MAIN = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/588cdac0b_unnamed.webp";
+const MUSIC1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/081328a46_music1.jpg";
+const ART_MARKET = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5f5ebf081_505899020_10229857296121817_2446135706567305270_n.jpg";
+const CATERING = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/759d9388b_catering.jpg";
 const AUD1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/7b302f861_audience.jpg";
 const AUD2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/f201220af_audience2.jpg";
-const COMEDY1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7ea37424d_comedy1.jpg";
 const COMEDY2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/b15629c27_comedy2.jpg";
 const COMEDY3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/03a32916e_comedy3.jpg";
 const COMEDY4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/1c090ee5a_comedy4.jpg";
-const MUSIC1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/081328a46_music1.jpg";
 const COFFTEA = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/f446d36e1_coffeetea.jpg";
-const CATERING = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/759d9388b_catering.jpg";
-
-
 
 export default function Events() {
   const [form, setForm] = useState({ name: '', email: '', type: '', message: '' });
@@ -29,89 +28,214 @@ export default function Events() {
 
   return (
     <div className="pb-24 min-h-screen">
+
       {/* Hero */}
-      <div className="relative h-[60vh] w-full overflow-hidden mb-16">
+      <div className="relative h-[70vh] w-full overflow-hidden mb-24">
         <img
           src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a408d105a_audience2.jpg"
           alt="PANACEA Events"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60" />
-        <div className="absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-6">
-          <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Culture & Community</p>
-          <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-wide mb-4 text-white">Events</h1>
-          <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
-            PANACEA is more than a shop. It's a space for comedy, music, art, and community to come together.
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 text-center px-6">
+          <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">Culture & Community</p>
+          <h1 className="font-display text-5xl md:text-7xl font-semibold tracking-wide mb-6 text-white">Events at PANACEA</h1>
+          <p className="text-white/65 max-w-2xl mx-auto leading-relaxed text-lg">
+            This is a community space. Comedy nights, live music, art markets, and more — all happening right here in Corpus Christi.
           </p>
         </div>
       </div>
 
-      {/* What We Host */}
-      <div className="px-6 mb-24">
-        <div className="max-w-7xl mx-auto">
+      {/* Editorial Intro */}
+      <div className="px-6 mb-28">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">From the Founder</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wide mb-6 leading-snug">
+              "We built PANACEA to be more than a shop.<br />
+              <span className="text-primary">It's a place to gather."</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+              When Rene Pena opened PANACEA, the vision was always bigger than retail. The backyard, the patio, the open mic nights — these weren't afterthoughts. They were the whole point.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Every event we host is an extension of that same idea: bring people together, support local talent, and make Corpus Christi feel a little more like home.
+            </p>
+          </motion.div>
+        </div>
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: Mic,
-                label: 'Stand-Up Comedy',
-                image: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7ea37424d_comedy1.jpg",
-                desc: 'Backyard comedy nights with local and touring comedians. No cover, great vibes, and laughs until close.',
-              },
-              {
-                icon: Music,
-                label: 'Live Music',
-                image: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/081328a46_music1.jpg",
-                desc: 'Acoustic sets, local bands, and DJ nights that turn our space into a real venue.',
-              },
-              {
-                icon: Palette,
-                label: 'Art & Vendor Markets',
-                image: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5f5ebf081_505899020_10229857296121817_2446135706567305270_n.jpg",
-                desc: 'Pop-up markets featuring local artists, craftspeople, and vendors. Shop local, support the community.',
-              },
-              {
-                icon: Users,
-                label: 'Community Gatherings',
-                image: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/759d9388b_catering.jpg",
-                desc: 'Block parties, seasonal celebrations, and special events. Food, drinks, and the full PANACEA experience.',
-              },
-            ].map((type, i) => {
-              const Icon = type.icon;
-              return (
-                <motion.div
-                  key={type.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
-                >
-                  <div className="h-52 overflow-hidden">
-                    <img src={type.image} alt={type.label} className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-500" />
-                  </div>
-                  <div className="p-7">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <h3 className="font-display text-xl font-semibold tracking-wide">{type.label}</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{type.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+      {/* Stand-Up Comedy — Full editorial spread */}
+      <div className="px-6 mb-28">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Mic className="w-5 h-5 text-primary" />
+                </div>
+                <p className="text-primary text-xs tracking-[0.4em] uppercase font-medium">Stand-Up Comedy</p>
+              </div>
+              <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-6 leading-tight">
+                Backyard Comedy<br />Nights
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Under string lights in the backyard, local and visiting comedians take the mic for intimate, no-cover comedy nights. Bring your own chair, bring a friend, and stay until close.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                These shows started as a simple idea — a few chairs, a mic, and a good crowd. They've grown into some of the most beloved nights in Corpus. No cover. No pretense. Just good laughs.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img src={COMEDY_MAIN} alt="Stand-Up Comedy at PANACEA" className="w-full h-auto object-cover opacity-90" />
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Past Event Gallery */}
-      <div className="px-6 mb-24">
+      {/* Live Music */}
+      <div className="px-6 mb-28">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-10 text-center">Past Events</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="rounded-2xl overflow-hidden order-2 lg:order-1"
+            >
+              <img src={MUSIC1} alt="Live Music at PANACEA" className="w-full h-80 object-cover opacity-90" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="order-1 lg:order-2"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Music className="w-5 h-5 text-primary" />
+                </div>
+                <p className="text-primary text-xs tracking-[0.4em] uppercase font-medium">Live Music</p>
+              </div>
+              <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-6 leading-tight">
+                Acoustic Sets &<br />Local Artists
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Acoustic performers, local bands, and DJ nights — PANACEA transforms into a real venue after hours. The music is as carefully curated as the products.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We believe in paying local artists fairly and giving them a room that actually listens.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Art & Vendor Markets */}
+      <div className="px-6 mb-28">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Palette className="w-5 h-5 text-primary" />
+                </div>
+                <p className="text-primary text-xs tracking-[0.4em] uppercase font-medium">Art & Vendor Markets</p>
+              </div>
+              <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-6 leading-tight">
+                Local Makers.<br />Real Community.
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                We open our doors to local artists, craftspeople, and independent vendors for pop-up markets that feel more like neighborhood block parties than retail events.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Shop handmade goods, discover local talent, and spend a Sunday afternoon the right way.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img src={ART_MARKET} alt="Art & Vendor Market at PANACEA" className="w-full h-80 object-cover opacity-90" />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Community Gatherings */}
+      <div className="px-6 mb-28">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="rounded-2xl overflow-hidden order-2 lg:order-1"
+            >
+              <img src={CATERING} alt="Community Gathering at PANACEA" className="w-full h-80 object-cover opacity-90" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="order-1 lg:order-2"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Users className="w-5 h-5 text-primary" />
+                </div>
+                <p className="text-primary text-xs tracking-[0.4em] uppercase font-medium">Community Gatherings</p>
+              </div>
+              <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-6 leading-tight">
+                Block Parties &<br />Celebrations
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Seasonal celebrations, themed nights, and full-scale block parties — food, drinks, and the complete PANACEA experience.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Follow us to stay in the loop. These tend to sell out fast.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Photo Gallery */}
+      <div className="px-6 mb-28">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">In the Moment</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wide">Past Events</h2>
+          </div>
           <div style={{ columnCount: 3, columnGap: '16px' }} className="[column-count:2] md:[column-count:3]">
-            {[COMEDY1, COMEDY2, COMEDY3, COMEDY4, MUSIC1, COFFTEA, CATERING, AUD1, AUD2].map((img, i) => (
+            {[COMEDY2, COMEDY3, COMEDY4, AUD1, AUD2, COFFTEA].map((img, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
