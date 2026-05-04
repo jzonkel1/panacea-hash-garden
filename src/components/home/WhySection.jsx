@@ -72,11 +72,11 @@ export default function WhySection() {
             transition={{ delay: reasons.length * 0.1 }}
             className="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
           >
-            <div className="aspect-square overflow-hidden">
+            <div className="h-48 overflow-hidden">
               <img
                 src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e480f5c04_iguana.jpg"
                 alt="PANACEA's Iguana Mascot"
-                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+                className="w-full h-full object-cover object-center opacity-80 hover:opacity-100 transition-opacity duration-500"
               />
             </div>
             <div className="p-6">
