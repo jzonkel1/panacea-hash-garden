@@ -121,19 +121,21 @@ export default function ReviewsSection() {
 
   return (
     <section className="py-24 px-6 relative overflow-hidden">
-      {/* Video background */}
+      {/* TEST VIDEO — confirm this loads, then we'll convert to background */}
       <video
-        autoPlay
+        src="https://media.base44.com/videos/public/69f7b435c4e1fadd6b3c10d5/04ecf4c6b_9694807-hd_1920_1080_25fps.mp4"
+        controls
         muted
-        loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.18 }}
-      >
-        <source src="https://media.base44.com/videos/public/69f7b435c4e1fadd6b3c10d5/04ecf4c6b_9694807-hd_1920_1080_25fps.mp4" type="video/mp4" />
-      </video>
+        style={{
+          width: "100%",
+          height: "400px",
+          objectFit: "cover",
+          display: "block",
+          backgroundColor: "black",
+        }}
+      />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#0a0b09]/80" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#9AC221]/5 blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full bg-[#9AC221]/4 blur-[150px]" />
 
