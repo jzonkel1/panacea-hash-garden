@@ -8,18 +8,24 @@ import MerchPreview from '../components/home/MerchPreview';
 import VisitSection from '../components/home/VisitSection';
 import ReviewsSection from '../components/home/ReviewsSection';
 import BannerDivider from '../components/home/BannerDivider';
+import SectionDivider from '../components/home/SectionDivider';
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
       <TrustBar />
+      <SectionDivider />
       <CategoriesSection />
       <BannerDivider />
       <WhySection />
+      <SectionDivider flip />
       <ReviewsSection />
+      <SectionDivider />
       <EventsPreview />
+      <SectionDivider flip />
       <MerchPreview />
+      <SectionDivider />
       <VisitSection />
     </div>
   );

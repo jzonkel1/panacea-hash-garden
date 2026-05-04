@@ -121,18 +121,21 @@ export default function ReviewsSection() {
 
   return (
     <section className="py-24 px-6 relative overflow-hidden">
-      {/* Background ambiance */}
-      <div className="absolute inset-0 bg-[#0a0b09]" />
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: 0.18 }}
+      >
+        <source src="https://media.base44.com/videos/public/69f7b435c4e1fadd6b3c10d5/206faae2c_9694807-hd_1920_1080_25fps.mov" type="video/mp4" />
+      </video>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#0a0b09]/80" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#9AC221]/5 blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full bg-[#9AC221]/4 blur-[150px]" />
-
-      {/* Subtle leaf/dot texture */}
-      <div className="absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage: 'radial-gradient(circle, #9AC221 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
