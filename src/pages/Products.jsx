@@ -26,7 +26,7 @@ const products = [
   { name: 'Premium Indoor Flower', category: 'flower', price: '$12 – $60', desc: 'Hand-trimmed, locally grown premium strains. Multiple options available in-store.', image: FLOWER_IMG, badge: 'Popular' },
   { name: 'Exotic Strains', category: 'flower', price: '$15 – $75', desc: 'Rare and exotic cultivars rotated regularly. Ask our staff about current availability.', image: FLOWER2_IMG, badge: 'Limited' },
   { name: 'Live Resin Concentrates', category: 'concentrates', price: '$25 – $65', desc: 'Full-spectrum live resin for the ultimate terpene experience.', image: CONCENTRATE_IMG },
-  { name: 'THC Seltzers', category: 'drinks', price: '$6 – $12', desc: 'Brio Pop, Sherpa, Knotty Times and more. Cold and ready to drink.', image: DRINKS_IMG, badge: 'New', showcase: true },
+  { name: 'THC Seltzers', category: 'drinks', price: '$6 – $12', desc: 'Brio Pop, Sherpa, Knotty Times and more. Cold and ready to drink.', image: DRINKS_IMG, badge: 'New' },
   { name: 'Highly Delicious Baked Goods', category: 'edibles', price: '$8 – $25', desc: 'Fresh baked cookies, brownies, and more from Highly Delicious.', image: EDIBLES_IMG },
   { name: 'Gummies & Chocolates', category: 'edibles', price: '$10 – $35', desc: 'Infused gummies and chocolates in various strengths and flavors.', image: EDIBLES2_IMG },
   { name: 'Artisan Glass Pipes', category: 'glass', price: '$15 – $200+', desc: 'Handblown glass pipes, bubblers, and water pipes from local and national artists.', image: GLASS_IMG },

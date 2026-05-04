@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Leaf, Heart, Eye, Award, FlaskConical, Cookie, Wheat } from 'lucide-react';
 
 const FAVICON = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dc844a0e3_favicon.png";
+const RENE_PROFILE = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/87572b903_615485162_10232513471604544_3351147333408530313_n.jpg";
 
 const LOGO_URL = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/39d8c112f_logo.png";
 const FLOWER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/c7cf5b37c_flower2.jpg";
@@ -176,14 +177,12 @@ export default function About() {
           >
             <div className="p-10 md:p-14">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Leaf className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground">Rene Pena</p>
-                  <p className="text-xs text-muted-foreground">Owner & Operator, PANACEA</p>
-                </div>
-              </div>
+                 <img src={RENE_PROFILE} alt="Rene Pena" className="w-9 h-9 rounded-full object-cover" />
+                 <div>
+                   <p className="text-sm font-medium text-foreground">Rene Pena</p>
+                   <p className="text-xs text-muted-foreground">Owner & Operator, PANACEA</p>
+                 </div>
+               </div>
 
               <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">From the Garden</p>
               <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-8 leading-snug">
