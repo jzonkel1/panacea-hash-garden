@@ -130,7 +130,7 @@ export default function ReviewsSection() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 0.18 }}
       >
-        <source src="https://media.base44.com/videos/public/69f7b435c4e1fadd6b3c10d5/206faae2c_9694807-hd_1920_1080_25fps.mov" type="video/mp4" />
+        <source src="https://media.base44.com/videos/public/69f7b435c4e1fadd6b3c10d5/2efcd2dac_9694807-hd_1920_1080_25fps.mov" type="video/mp4" />
       </video>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#0a0b09]/80" />
