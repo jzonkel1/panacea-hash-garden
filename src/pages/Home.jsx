@@ -7,6 +7,7 @@ import EventsPreview from '../components/home/EventsPreview';
 import MerchPreview from '../components/home/MerchPreview';
 import VisitSection from '../components/home/VisitSection';
 import ReviewsSection from '../components/home/ReviewsSection';
+import BannerDivider from '../components/home/BannerDivider';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <TrustBar />
       <CategoriesSection />
+      <BannerDivider />
       <WhySection />
       <ReviewsSection />
       <EventsPreview />
