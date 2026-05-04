@@ -36,7 +36,7 @@ export default function Events() {
           alt="PANACEA Events"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-6">
           <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Culture & Community</p>
           <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-wide mb-4 text-white">Events</h1>
