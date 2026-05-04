@@ -86,7 +86,9 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-10 md:p-14 text-center relative overflow-hidden"
+            whileHover={{ rotateX: 5, rotateY: -5, z: 100 }}
+            style={{ perspective: 1200 }}
+            className="glass-card rounded-2xl p-10 md:p-14 text-center relative overflow-hidden shadow-2xl shadow-primary/20"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <img src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dc844a0e3_favicon.png" alt="PANACEA" className="w-12 h-12 mx-auto mb-6 opacity-90" />
