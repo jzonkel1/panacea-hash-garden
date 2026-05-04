@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Heart, Eye, Award, FlaskConical, Cookie, Wheat } from 'lucide-react';
 
@@ -37,6 +37,25 @@ const values = [
 ];
 
 export default function About() {
+  const philosophyRef = useRef(null);
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    if (!philosophyRef.current) return;
+    const rect = philosophyRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateY = (x - centerX) / 10;
+    const rotateX = (centerY - y) / 10;
+    setRotate({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotate({ x: 0, y: 0 });
+  };
+
   return (
     <div className="pt-24 pb-24 min-h-screen">
       {/* Hero */}
@@ -83,10 +102,13 @@ export default function About() {
       <div className="px-6 mb-24">
         <div className="max-w-4xl mx-auto">
           <motion.div
+            ref={philosophyRef}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ rotateX: 5, rotateY: -5, z: 100 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            animate={{ rotateX: rotate.x, rotateY: rotate.y }}
             style={{ perspective: 1200 }}
             className="glass-card rounded-2xl p-10 md:p-14 text-center relative overflow-hidden shadow-2xl shadow-primary/20"
           >
