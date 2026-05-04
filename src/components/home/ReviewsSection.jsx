@@ -121,25 +121,29 @@ export default function ReviewsSection() {
 
   return (
     <section className="py-24 px-6 relative overflow-hidden">
-      {/* TEST VIDEO — confirm this loads, then we'll convert to background */}
+      {/* Background video */}
       <video
         src="https://media.base44.com/videos/public/69f7b435c4e1fadd6b3c10d5/04ecf4c6b_9694807-hd_1920_1080_25fps.mp4"
-        controls
+        autoPlay
         muted
+        loop
         playsInline
         style={{
+          position: "absolute",
+          inset: 0,
           width: "100%",
-          height: "400px",
+          height: "100%",
           objectFit: "cover",
-          display: "block",
-          backgroundColor: "black",
+          opacity: 0.22,
+          zIndex: 0,
         }}
       />
       {/* Dark overlay */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#9AC221]/5 blur-[120px]" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full bg-[#9AC221]/4 blur-[150px]" />
+      <div className="absolute inset-0 bg-[#0a0b09]/80" style={{ zIndex: 1 }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#9AC221]/5 blur-[120px]" style={{ zIndex: 1 }} />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full bg-[#9AC221]/4 blur-[150px]" style={{ zIndex: 1 }} />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative" style={{ zIndex: 2 }}>
 
         {/* Header */}
         <motion.div
