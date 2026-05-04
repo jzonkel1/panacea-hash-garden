@@ -93,7 +93,7 @@ export default function Products() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className={`group glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${product.showcase ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
+                className={`group glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${product.showcase ? 'sm:col-span-2' : ''}`}
               >
                 {product.image ? (
                   <div className={`overflow-hidden relative ${product.showcase ? 'aspect-square' : 'h-52'}`}>
