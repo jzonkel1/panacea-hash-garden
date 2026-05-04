@@ -73,7 +73,7 @@ export default function Events() {
               {
                 icon: Palette,
                 label: 'Art & Vendor Markets',
-                image: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/f446d36e1_coffeetea.jpg",
+                image: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5f5ebf081_505899020_10229857296121817_2446135706567305270_n.jpg",
                 desc: 'Pop-up markets featuring local artists, craftspeople, and vendors. Shop local, support the community.',
               },
               {
