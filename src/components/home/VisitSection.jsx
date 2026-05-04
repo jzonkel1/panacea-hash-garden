@@ -15,21 +15,13 @@ export default function VisitSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Map + Photo stacked */}
+          {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-4"
+            className="rounded-2xl overflow-hidden border border-white/5 h-[400px]"
           >
-            <div className="rounded-2xl overflow-hidden">
-              <img
-                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9e3168c89_unnamed2.jpg"
-                alt="PANACEA Hash Garden storefront and sign"
-                className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden border border-white/5 h-[400px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.5!2d-97.389!3d27.729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z4914+Everhart+Rd+Corpus+Christi+TX!5e0!3m2!1sen!2sus!4v1"
               width="100%"
@@ -39,16 +31,25 @@ export default function VisitSection() {
               loading="lazy"
               title="PANACEA Location"
             />
-            </div>
           </motion.div>
 
-          {/* Info */}
+          {/* Info with photo background */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center"
+            className="relative rounded-2xl overflow-hidden flex flex-col justify-center"
           >
+            {/* Background photo */}
+            <img
+              src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9e3168c89_unnamed2.jpg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
+            />
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-black/60" />
+            {/* Content */}
+            <div className="relative z-10 p-8 flex flex-col justify-center h-full">
             <div className="space-y-8">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -90,6 +91,7 @@ export default function VisitSection() {
               <Navigation className="w-4 h-4" />
               Get Directions
             </a>
+            </div>
           </motion.div>
         </div>
       </div>
