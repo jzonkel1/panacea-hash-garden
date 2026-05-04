@@ -40,6 +40,8 @@ const BACKPACK = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d
 // Merch store photos
 const MERCH1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a54544c32_merch.jpg";
 const MERCH2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/8960807d0_merch2.jpg";
+const MERCH3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7e5dd18d8_IMG_4978.jpg";
+const MERCH4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/64d89d53e_merch.jpg";
 
 const merchItems = [
   {
@@ -213,6 +215,39 @@ export default function Merch() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* In-Store Photo Strip */}
+      <div className="px-6 mb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img
+                src={MERCH3}
+                alt="PANACEA merch display case"
+                className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img
+                src={MERCH4}
+                alt="PANACEA tropical tee and hat"
+                className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

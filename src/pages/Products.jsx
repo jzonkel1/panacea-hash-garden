@@ -130,6 +130,39 @@ export default function Products() {
         </div>
       </div>
 
+      {/* In-Store Photo Gallery */}
+      <div className="px-6 mt-16 mb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/46582733d_IMG_4979.jpg"
+                alt="PANACEA in-store accessories display"
+                className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e485a9ba5_IMG_4001.jpg"
+                alt="PANACEA in-store rolling papers and accessories"
+                className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="px-6 mt-16">
         <div className="max-w-3xl mx-auto text-center glass-card rounded-2xl p-10">
