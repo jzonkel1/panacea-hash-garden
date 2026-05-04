@@ -43,8 +43,9 @@ export default function WhySection() {
           <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Why PANACEA</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((reason, i) => {
+        {/* Top row: first 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {reasons.slice(0, 3).map((reason, i) => {
             const Icon = reason.icon;
             return (
               <motion.div
@@ -63,13 +64,34 @@ export default function WhySection() {
               </motion.div>
             );
           })}
+        </div>
 
-          {/* Iguana mascot card */}
+        {/* Bottom row: card 4, iguana (center), card 5 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Card 4 */}
+          {(() => { const reason = reasons[3]; const Icon = reason.icon; return (
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                <Icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-medium mb-3 tracking-wide">{reason.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
+            </motion.div>
+          ); })()}
+
+          {/* Iguana mascot card — center */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: reasons.length * 0.1 }}
+            transition={{ delay: 0.4 }}
             className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1 flex flex-col"
           >
             <div className="w-full rounded-xl overflow-hidden mb-5" style={{ height: '140px' }}>
@@ -82,6 +104,24 @@ export default function WhySection() {
             <h3 className="text-lg font-medium mb-3 tracking-wide">We Have an Iguana! 🦎</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">Our unofficial mascot calls PANACEA home. Name TBD — come meet them in-store.</p>
           </motion.div>
+
+          {/* Card 5 */}
+          {(() => { const reason = reasons[4]; const Icon = reason.icon; return (
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                <Icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-medium mb-3 tracking-wide">{reason.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
+            </motion.div>
+          ); })()}
         </div>
       </div>
     </section>
