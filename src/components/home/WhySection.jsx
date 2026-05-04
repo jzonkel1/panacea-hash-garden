@@ -63,6 +63,27 @@ export default function WhySection() {
               </motion.div>
             );
           })}
+
+          {/* Iguana mascot card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: reasons.length * 0.1 }}
+            className="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+          >
+            <div className="aspect-square overflow-hidden">
+              <img
+                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e480f5c04_iguana.jpg"
+                alt="PANACEA's Iguana Mascot"
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-medium mb-2 tracking-wide">We Have an Iguana! 🦎</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">Our unofficial mascot calls PANACEA home. Name TBD — come meet them in-store.</p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
