@@ -94,11 +94,11 @@ export default function HeroSection() {
       <ParticleCanvas />
 
       {/* Content */}
-      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-20 md:pt-32 pb-8 flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-16 md:pt-32 pb-4 flex flex-col items-center md:items-start text-center md:text-left">
 
         {/* Logo */}
         <motion.div
-          className="mb-7"
+          className="mb-4 md:mb-7"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
@@ -108,7 +108,7 @@ export default function HeroSection() {
 
         {/* Eyebrow */}
         <motion.p
-          className="text-primary text-[10px] md:text-xs tracking-[0.45em] uppercase mb-8 font-light"
+          className="text-primary text-[10px] md:text-xs tracking-[0.45em] uppercase mb-4 md:mb-8 font-light"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
@@ -117,7 +117,7 @@ export default function HeroSection() {
         </motion.p>
 
         {/* Headline */}
-        <h1 className="font-display mb-8" style={{ lineHeight: 1.08 }}>
+        <h1 className="font-display mb-4 md:mb-8" style={{ lineHeight: 1.08 }}>
           {lines.map((line, i) => (
             <motion.span
               key={i}
@@ -136,7 +136,7 @@ export default function HeroSection() {
 
         {/* Body */}
         <motion.p
-          className="text-[#9a9a8e] text-base md:text-lg leading-relaxed max-w-md mb-12 font-light mx-auto md:mx-0"
+          className="text-[#9a9a8e] text-sm md:text-lg leading-relaxed max-w-md mb-6 md:mb-12 font-light mx-auto md:mx-0"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 1.05 }}

@@ -12,14 +12,14 @@ const items = [
 export default function TrustBar() {
   return (
     <div className="relative z-10 bg-black/60 border-y border-white/6 backdrop-blur-md">
-      {/* Mobile: horizontal scroll strip */}
-      <div className="md:hidden flex overflow-x-auto scrollbar-hide gap-4 px-4 py-3">
+      {/* Mobile: compact 2x2 grid */}
+      <div className="md:hidden grid grid-cols-2 gap-x-4 gap-y-2.5 px-5 py-3">
         {items.map((item, i) => {
           const Icon = item.icon;
           return (
-            <div key={item.label} className="flex items-center gap-2 shrink-0">
+            <div key={item.label} className="flex items-center gap-2">
               <Icon className="w-3.5 h-3.5 text-primary shrink-0" />
-              <span className="text-xs font-medium text-foreground whitespace-nowrap">{item.label}</span>
+              <span className="text-[11px] font-medium text-foreground/85 leading-tight">{item.label}</span>
             </div>
           );
         })}
