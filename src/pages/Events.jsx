@@ -28,13 +28,19 @@ export default function Events() {
   };
 
   return (
-    <div className="pt-24 pb-24 min-h-screen">
-      {/* Header */}
-      <div className="px-6 mb-16">
-        <div className="max-w-7xl mx-auto text-center">
+    <div className="pb-24 min-h-screen">
+      {/* Hero */}
+      <div className="relative h-[60vh] w-full overflow-hidden mb-16">
+        <img
+          src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a408d105a_audience2.jpg"
+          alt="PANACEA Events"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-6">
           <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Culture & Community</p>
-          <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-wide mb-4">Events</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-wide mb-4 text-white">Events</h1>
+          <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
             PANACEA is more than a shop. It's a space for comedy, music, art, and community to come together.
           </p>
         </div>
