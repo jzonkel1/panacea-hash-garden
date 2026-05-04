@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
-const COMEDY_MAIN = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/588cdac0b_unnamed.webp";
+const COMEDY_MAIN = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2cd58801d_comed65.jpg";
 const MUSIC1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/081328a46_music1.jpg";
 const ART_MARKET = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5f5ebf081_505899020_10229857296121817_2446135706567305270_n.jpg";
 const CATERING = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/759d9388b_catering.jpg";
@@ -40,9 +40,23 @@ export default function Events() {
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 text-center px-6">
           <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">Culture & Community</p>
           <h1 className="font-display text-5xl md:text-7xl font-semibold tracking-wide mb-6 text-white">Events at PANACEA</h1>
-          <p className="text-white/65 max-w-2xl mx-auto leading-relaxed text-lg">
+          <p className="text-white/65 max-w-2xl mx-auto leading-relaxed text-lg mb-10">
             This is a community space. Comedy nights, live music, art markets, and more — all happening right here in Corpus Christi.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#booking"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wide hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20"
+            >
+              Book an Event
+            </a>
+            <a
+              href="#calendar"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg glass-card border border-white/15 text-white font-medium tracking-wide hover:bg-white/10 transition-all"
+            >
+              View Events Calendar
+            </a>
+          </div>
         </div>
       </div>
 
@@ -181,7 +195,7 @@ export default function Events() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="rounded-2xl overflow-hidden"
             >
-              <img src={ART_MARKET} alt="Art & Vendor Market at PANACEA" className="w-full h-80 object-cover opacity-90" />
+              <img src={ART_MARKET} alt="Art & Vendor Market at PANACEA" className="w-full h-auto object-contain opacity-90" />
             </motion.div>
           </div>
         </div>
