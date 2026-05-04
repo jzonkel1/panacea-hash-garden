@@ -8,7 +8,7 @@ const FLOWER2_IMG = "https://media.base44.com/images/public/user_69b18e558b14cca
 const DRINKS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd1d1ce9a_Drinks_on_smoky_background_202605031815.jpeg";
 const EDIBLES_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/4470748cb_edibles.jpg";
 const CONCENTRATE_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd83be047_concentrate.jpg";
-const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9cf7bd589_grinder.jpg";
+const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4eb149aeb_Smokey_black_background_202605041646.jpeg";
 const GLASS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a50809387_glass.JPG";
 
 const categories = [
