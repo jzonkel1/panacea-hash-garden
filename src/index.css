@@ -89,6 +89,11 @@
   }
 }
 
+::selection {
+  background-color: rgba(154, 194, 33, 0.4);
+  color: #ffffff;
+}
+
 /* Hide scrollbar utility */
 .scrollbar-hide {
   -ms-overflow-style: none;
