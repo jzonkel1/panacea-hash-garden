@@ -24,7 +24,7 @@ export default function VisitSection() {
           <img
             src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9e3168c89_unnamed2.jpg"
             alt="PANACEA Hash Garden storefront and sign"
-            className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+            className="w-full h-64 object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
           />
         </motion.div>
 
