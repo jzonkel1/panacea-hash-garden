@@ -73,13 +73,7 @@ export default function EventsPreview() {
                 <p className="text-muted-foreground text-xs">Events hosted</p>
               </div>
             </div>
-            <div className="mt-4">
-              <img
-                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5458ef04c_IMG_4994.jpg"
-                alt="Art at PANACEA"
-                className="w-full rounded-2xl shadow-2xl shadow-black/50 opacity-85"
-              />
-            </div>
+
           </motion.div>
         </div>
       </div>
