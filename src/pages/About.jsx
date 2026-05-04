@@ -7,8 +7,8 @@ const FLOWER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c1
 const OWNER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/414ba8ad0_owner.jpg";
 const GROW1_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/1701a1c93_grow1.jpg";
 const FARMS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2a962baf2_farms.jpg";
-const BUD1_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2ccd4c444_bud.jpg";
-const BUD2_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a9aa728f2_bud2.jpg";
+const BUD1_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/88fb6f86e_IMG_4984.jpg";
+const BUD2_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/c59e846a6_IMG_4994.jpg";
 
 const values = [
   {
