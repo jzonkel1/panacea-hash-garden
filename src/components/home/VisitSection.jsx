@@ -14,6 +14,20 @@ export default function VisitSection() {
           <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Visit the Shop</h2>
         </div>
 
+        {/* Shop photo */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-2xl overflow-hidden mb-12"
+        >
+          <img
+            src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9e3168c89_unnamed2.jpg"
+            alt="PANACEA Hash Garden storefront and sign"
+            className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+          />
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Map */}
           <motion.div
