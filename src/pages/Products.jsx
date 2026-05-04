@@ -8,7 +8,7 @@ const DRINKS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c1
 const EDIBLES_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/bc1f23666_generated_image.png";
 const EDIBLES2_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/6ecfadbbb_generated_image.png";
 const CONCENTRATE_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd83be047_concentrate.jpg";
-const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/698e0354d_generated_image.png";
+const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4eb149aeb_Smokey_black_background_202605041646.jpeg";
 const GLASS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a50809387_glass.JPG";
 const ROLLING_PAPERS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7a23ded7e_Raw_rolling_papers_smoky_background_202605041639.jpeg";
 
