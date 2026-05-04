@@ -163,6 +163,45 @@ export default function Merch() {
         </div>
       </div>
 
+      {/* Local Art Section — below hero */}
+      <div className="px-6 mb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7e5dd18d8_IMG_4978.jpg"
+                alt="PANACEA art and merch display case"
+                className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">More Than Apparel</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wide mb-6 leading-snug">
+                We Also Carry Paintings<br />
+                <span className="text-primary">from Local Artists.</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                Walk into PANACEA and you'll find more than branded gear — our display cases feature original paintings and prints from Corpus Christi's local art community.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Each piece is one-of-a-kind. Selection rotates as artists bring in new work. Stop by the shop or reach out to ask what's currently available.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       {/* Featured Items */}
       <div className="px-6 mb-16">
         <div className="max-w-7xl mx-auto">
@@ -219,39 +258,6 @@ export default function Merch() {
         </div>
       </div>
 
-      {/* In-Store Photo Strip */}
-      <div className="px-6 mb-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden"
-            >
-              <img
-                src={MERCH3}
-                alt="PANACEA merch display case"
-                className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-2xl overflow-hidden"
-            >
-              <img
-                src={MERCH4}
-                alt="PANACEA tropical tee and hat"
-                className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
       {/* CTA */}
       <div className="px-6 mb-16">
         <div className="max-w-3xl mx-auto text-center glass-card rounded-2xl p-10">
@@ -267,6 +273,46 @@ export default function Merch() {
             <ExternalLink className="w-4 h-4" />
           </a>
           <p className="text-muted-foreground/40 text-xs mt-4">Opens in new tab · Powered by Printful</p>
+        </div>
+      </div>
+
+      {/* Local Art Gallery */}
+      <div className="px-6 mb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Local Art</p>
+            <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-2">Original Paintings In-Store</h2>
+            <p className="text-muted-foreground text-sm mt-3">All pieces are originals from local artists. <span className="text-primary font-medium">Ask for availability — selection changes frequently.</span></p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/591abe4cd_44.jpg", alt: "Day of the Dead figure painting" },
+              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/0b68b9c7a_IMG_4984.jpg", alt: "Grayscale portrait with roses" },
+              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/df0d9277b_IMG_4991.jpg", alt: "Colorful abstract figure painting" },
+              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/844b04ea2_IMG_4994.jpg", alt: "Starry Night inspired painting" },
+              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/01f4b75ae_monkey.jpg", alt: "Pop art monkey painting" },
+            ].map((painting, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass-card rounded-xl overflow-hidden group"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={painting.src}
+                    alt={painting.alt}
+                    className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground/60 text-xs tracking-wide uppercase">Ask in-store or via the Contact page for current availability · Pieces vary</p>
+          </div>
         </div>
       </div>
 
