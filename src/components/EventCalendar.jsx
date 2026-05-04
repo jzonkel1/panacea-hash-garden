@@ -64,13 +64,13 @@ export default function EventCalendar() {
   };
 
   return (
-    <section id="calendar" className="px-6 mb-28">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Mark Your Calendar</p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wide mb-4">Upcoming Events at PANACEA</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Check back frequently for updates. Events fill up fast—arrive early for first-come seating.
+    <section id="calendar" className="px-6 mb-20">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <p className="text-primary text-xs tracking-[0.4em] uppercase mb-2 font-medium">Mark Your Calendar</p>
+          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-2">Upcoming Events</h2>
+          <p className="text-muted-foreground text-sm">
+            Check back for updates. Events fill up fast.
           </p>
         </div>
 
@@ -78,36 +78,36 @@ export default function EventCalendar() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-card rounded-2xl p-8"
+          className="glass-card rounded-2xl p-6"
         >
           {/* Month Navigation */}
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex items-center justify-between mb-6">
             <button
               onClick={prevMonth}
-              className="p-2 rounded-lg hover:bg-white/5 transition-colors"
+              className="p-1 rounded-lg hover:bg-white/5 transition-colors"
             >
-              <ChevronLeft className="w-5 h-5 text-primary" />
+              <ChevronLeft className="w-4 h-4 text-primary" />
             </button>
-            <h3 className="font-display text-2xl font-semibold tracking-wide">{monthName}</h3>
+            <h3 className="font-display text-lg font-semibold tracking-wide">{monthName}</h3>
             <button
               onClick={nextMonth}
-              className="p-2 rounded-lg hover:bg-white/5 transition-colors"
+              className="p-1 rounded-lg hover:bg-white/5 transition-colors"
             >
-              <ChevronRight className="w-5 h-5 text-primary" />
+              <ChevronRight className="w-4 h-4 text-primary" />
             </button>
           </div>
 
           {/* Day Headers */}
-          <div className="grid grid-cols-7 gap-2 mb-4">
+          <div className="grid grid-cols-7 gap-1 mb-2">
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-              <div key={day} className="text-center text-xs font-medium text-muted-foreground uppercase tracking-wide py-2">
+              <div key={day} className="text-center text-[10px] font-medium text-muted-foreground uppercase tracking-wide py-1">
                 {day}
               </div>
             ))}
           </div>
 
           {/* Calendar Days */}
-          <div className="grid grid-cols-7 gap-2">
+          <div className="grid grid-cols-7 gap-1">
             {days.map((day, idx) => {
               const events = day ? getEventsForDay(day) : [];
               const hasEvent = events.length > 0;
@@ -119,7 +119,7 @@ export default function EventCalendar() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.01 }}
-                  className={`min-h-24 p-2 rounded-lg border transition-all ${
+                  className={`min-h-16 p-1 rounded border text-[11px] transition-all ${
                     day
                       ? hasEvent
                         ? 'bg-primary/5 border-primary/20'
@@ -129,25 +129,29 @@ export default function EventCalendar() {
                 >
                   {day && (
                     <div className="h-full flex flex-col">
-                      <span className={`text-sm font-medium ${!hasEvent ? 'text-muted-foreground' : 'text-foreground'}`}>
+                      <span className={`font-medium ${!hasEvent ? 'text-muted-foreground' : 'text-foreground'}`}>
                         {day}
                       </span>
                       {hasEvent && (
-                        <div className="mt-1 space-y-0.5 flex-1">
-                          {events.map((event, i) => {
+                        <div className="mt-0.5 space-y-0.5 flex-1 overflow-hidden">
+                          {events.slice(0, 1).map((event, i) => {
                             const Icon = iconMap[event.type];
                             return (
                               <div
                                 key={i}
-                                className={`text-[10px] flex items-center gap-1 px-1.5 py-0.5 rounded border ${colorMap[event.type]}`}
+                                className={`text-[8px] flex items-center gap-0.5 px-1 py-0.5 rounded border truncate ${colorMap[event.type]}`}
+                                title={event.name}
                               >
-                                <Icon className="w-2.5 h-2.5" />
+                                <Icon className="w-2 h-2 shrink-0" />
                                 <span className={`truncate ${textColorMap[event.type]}`}>
-                                  {event.name.split(' ').slice(0, 2).join(' ')}
+                                  {event.name.split(' ')[0]}
                                 </span>
                               </div>
                             );
                           })}
+                          {events.length > 1 && (
+                            <div className="text-[7px] text-muted-foreground/60">+{events.length - 1} more</div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -158,19 +162,19 @@ export default function EventCalendar() {
           </div>
 
           {/* Legend */}
-          <div className="mt-8 pt-8 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-5 pt-5 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-3">
             {Object.entries(iconMap).map(([type, Icon]) => (
-              <div key={type} className="flex items-center gap-2">
-                <div className={`w-6 h-6 rounded flex items-center justify-center ${colorMap[type]}`}>
-                  <Icon className={`w-3 h-3 ${textColorMap[type]}`} />
+              <div key={type} className="flex items-center gap-1.5">
+                <div className={`w-4 h-4 rounded flex items-center justify-center shrink-0 ${colorMap[type]}`}>
+                  <Icon className={`w-2.5 h-2.5 ${textColorMap[type]}`} />
                 </div>
-                <span className="text-xs text-muted-foreground capitalize">{type}</span>
+                <span className="text-[10px] text-muted-foreground capitalize">{type}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 p-4 rounded-lg bg-primary/5 border border-primary/20 text-sm text-muted-foreground text-center">
-            <p>Placeholder calendar. Check in-store or contact page for real event updates.</p>
+          <div className="mt-4 p-2 rounded text-[10px] text-muted-foreground/70 text-center bg-primary/5 border border-primary/15">
+            Placeholder calendar. Check in-store for real event updates.
           </div>
         </motion.div>
       </div>
