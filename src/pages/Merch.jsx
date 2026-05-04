@@ -132,7 +132,7 @@ export default function Merch() {
         <img
           src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/100671347_expand_image_borders_without_changing_202605032048.jpg"
           alt="PANACEA Merch"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-6">
