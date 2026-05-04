@@ -17,7 +17,7 @@ export default function TrustBar() {
         {items.map((item, i) => {
           const Icon = item.icon;
           return (
-            <div key={item.label} className="flex items-center gap-2">
+            <div key={item.label} className="flex items-center justify-center gap-2">
               <Icon className="w-3.5 h-3.5 text-primary shrink-0" />
               <span className="text-[11px] font-medium text-foreground/85 leading-tight">{item.label}</span>
             </div>
