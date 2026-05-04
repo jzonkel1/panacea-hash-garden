@@ -124,7 +124,7 @@ const merchItems = [
   },
 ];
 
-const MERCH_STORE_URL = "#";
+const MERCH_STORE_URL = "https://panaceahg.printful.me/";
 
 export default function Merch() {
   const [form, setForm] = useState({ name: '', email: '', idea: '' });

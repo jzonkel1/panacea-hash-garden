@@ -146,29 +146,47 @@ export default function ReviewsSection() {
       <div className="max-w-7xl mx-auto relative" style={{ zIndex: 2 }}>
 
         {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#9AC221]/25 bg-[#9AC221]/5 mb-5">
-            <MapPin className="w-3 h-3 text-[#9AC221]" />
-            <span className="text-[#9AC221] text-[11px] tracking-[0.3em] uppercase font-medium">
-              Highly rated by local customers
-            </span>
-          </div>
+         <motion.div
+           className="text-center mb-12"
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.6 }}
+         >
+           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#9AC221]/25 bg-[#9AC221]/5 mb-5">
+             <MapPin className="w-3 h-3 text-[#9AC221]" />
+             <span className="text-[#9AC221] text-[11px] tracking-[0.3em] uppercase font-medium">
+               Highly rated by local customers
+             </span>
+           </div>
 
-          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide text-white mb-4 leading-tight">
-            Corpus Christi's Hidden Gem<br className="hidden md:block" />
-            <span className="text-[#9AC221]"> for Quality Hemp</span>
-          </h2>
+           <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide text-white mb-4 leading-tight">
+             Corpus Christi's Hidden Gem<br className="hidden md:block" />
+             <span className="text-[#9AC221]"> for Quality Hemp</span>
+           </h2>
 
-          <p className="text-white/50 max-w-xl mx-auto text-base font-light leading-relaxed">
-            Real words from customers who came in for the products, the people, and the experience.
-          </p>
-        </motion.div>
+           <p className="text-white/50 max-w-xl mx-auto text-base font-light leading-relaxed">
+             Real words from customers who came in for the products, the people, and the experience.
+           </p>
+
+           {/* Review CTA - Top Position */}
+           <motion.div
+             className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center"
+             initial={{ opacity: 0, y: 8 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.5, delay: 0.1 }}
+           >
+             <a
+               href="https://search.google.com/local/writereview?placeid=ChIJP5AF1nF9aIYRz-cYtGDfr0c"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#9AC221] text-[#0a0b09] font-medium tracking-wide hover:bg-[#b0d828] transition-all hover:shadow-lg hover:shadow-[#9AC221]/25 text-sm"
+             >
+               Share Your Review ⭐
+             </a>
+           </motion.div>
+         </motion.div>
 
         {/* Review Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
@@ -206,22 +224,12 @@ export default function ReviewsSection() {
            <p className="text-white/45 text-sm tracking-wide mb-6">
              Come see why locals keep coming back.
            </p>
-           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-             <Link
-               to="/contact"
-               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#9AC221] text-[#0a0b09] font-semibold tracking-wide hover:bg-[#b0d828] transition-all hover:shadow-lg hover:shadow-[#9AC221]/25 text-sm"
-             >
-               Visit Panacea
-             </Link>
-             <a
-               href="https://search.google.com/local/writereview?placeid=ChIJP5AF1nF9aIYRz-cYtGDfr0c"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-[#9AC221] font-medium tracking-wide hover:text-[#b0d828] transition-all text-sm border border-[#9AC221]/30 hover:border-[#9AC221]/60"
-             >
-               Share Your Review
-             </a>
-           </div>
+           <Link
+             to="/contact"
+             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#9AC221] text-[#0a0b09] font-semibold tracking-wide hover:bg-[#b0d828] transition-all hover:shadow-lg hover:shadow-[#9AC221]/25 text-sm"
+           >
+             Visit Panacea
+           </Link>
          </motion.div>
       </div>
     </section>

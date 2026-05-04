@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import EventCalendar from '../components/EventCalendar';
 
 const COMEDY_MAIN = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2cd58801d_comed65.jpg";
 const MUSIC1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/081328a46_music1.jpg";
@@ -241,8 +242,11 @@ export default function Events() {
         </div>
       </div>
 
-      {/* Photo Gallery */}
-      <div className="px-6 mb-28">
+      {/* Event Calendar */}
+       <EventCalendar />
+
+       {/* Photo Gallery */}
+       <div className="px-6 mb-28">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">In the Moment</p>
