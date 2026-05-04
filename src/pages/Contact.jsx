@@ -88,14 +88,7 @@ export default function Contact() {
                 </form>
               </div>
 
-              {/* Monkey */}
-              <div className="mt-8 flex justify-end">
-                <img
-                  src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/14b5add35_monkey.jpg"
-                  alt="PANACEA mascot"
-                  className="w-64 rounded-2xl object-cover"
-                />
-              </div>
+
             </motion.div>
 
             {/* Info + Map */}
