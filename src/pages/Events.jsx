@@ -49,13 +49,7 @@ export default function Events() {
       {/* What We Host */}
       <div className="px-6 mb-24">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">What We Host</p>
-            <h2 className="font-display text-2xl md:text-4xl font-semibold tracking-wide mb-4">Events at PANACEA</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-sm leading-relaxed">
-              We open our doors to the community — hosting nights you won't forget and voices worth hearing.
-            </p>
-          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
