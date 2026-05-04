@@ -165,6 +165,63 @@ export default function About() {
         </div>
       </div>
 
+      {/* Founder Blog Post — Genetics */}
+      <div className="px-6 mb-24">
+        <div className="max-w-3xl mx-auto">
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card rounded-2xl overflow-hidden"
+          >
+            <div className="p-10 md:p-14">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Leaf className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-foreground">Rene Pena</p>
+                  <p className="text-xs text-muted-foreground">Owner & Operator, PANACEA</p>
+                </div>
+              </div>
+
+              <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">From the Garden</p>
+              <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-8 leading-snug">
+                Our Approach to Cannabis Genetics
+              </h2>
+
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  Our work in cannabis genetics is driven by a simple but powerful goal: to create cultivars that perform exceptionally in all growing environments, while truly thriving in living soil. By focusing on varieties that are naturally vigorous, resilient, and adaptable, we aim to give cultivators genetics they can trust — whether they grow indoors, outdoors, or in greenhouses.
+                </p>
+                <p>
+                  At the heart of our breeding program is an obsession with trichome development. Trichomes are where the plant's most valuable compounds are produced, and we select relentlessly for density, structure, and resilience of resin heads. Our genetics are designed to push trichome production to its fullest potential, supporting high cannabinoid content and superior extraction yields while maintaining the integrity and complexity of the plant's natural resin profile.
+                </p>
+                <p>
+                  Equally important is our focus on terpene expression. We are committed to developing truly distinctive and flavorful terpene profiles that go beyond the familiar. By carefully pairing complementary lines and rigorously selecting standout phenotypes, we seek to create cultivars that deliver layered, memorable aromas and flavors — profiles that reflect both their genetic heritage and the rich microbial life of living soil. The result is a portfolio of genetics that delivers not just potency, but a complete sensory experience: deeply aromatic, flavorful, and expressive plants, grown from the ground up.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-10 md:px-14 pb-4">
+              <div className="w-full rounded-xl overflow-hidden">
+                <img
+                  src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4aef96d96_tresleches.jpg"
+                  alt="Tres Leches cultivar in December"
+                  className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                />
+              </div>
+            </div>
+
+            <div className="px-10 md:px-14 py-7">
+              <p className="text-sm text-muted-foreground italic">
+                Tres Leches pictured above loving December! Shout out to team Panacea! 🌿
+              </p>
+            </div>
+          </motion.article>
+        </div>
+      </div>
+
       {/* Values */}
       <div className="px-6">
         <div className="max-w-7xl mx-auto">
