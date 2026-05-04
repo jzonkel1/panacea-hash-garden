@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Leaf, Heart, Eye, Sparkles, Award, FlaskConical, Cookie, Wheat } from 'lucide-react';
+import { Leaf, Heart, Eye, Award, FlaskConical, Cookie, Wheat } from 'lucide-react';
+
+const FAVICON = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dc844a0e3_favicon.png";
 
 const LOGO_URL = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/39d8c112f_logo.png";
 const FLOWER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/c7cf5b37c_flower2.jpg";
@@ -82,7 +84,7 @@ export default function About() {
             className="glass-card rounded-2xl p-10 md:p-14 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-            <Sparkles className="w-8 h-8 text-primary mx-auto mb-6" />
+            <img src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dc844a0e3_favicon.png" alt="PANACEA" className="w-12 h-12 mx-auto mb-6 opacity-90" />
             <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-6">Our Philosophy</h2>
             <p className="text-muted-foreground leading-relaxed text-lg max-w-2xl mx-auto">
               "We approach every product, every interaction, and every event with the same intention—quality over quantity, depth over flash, and people over profit. PANACEA isn't just where you shop. It's where you belong."
@@ -163,6 +165,7 @@ export default function About() {
       <div className="px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <img src={FAVICON} alt="PANACEA" className="w-10 h-10 mx-auto mb-4 opacity-80" />
             <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">What Drives Us</p>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Our Values</h2>
           </div>
