@@ -7,8 +7,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // https://vite.dev/config/
 // Decoupled from Base44 — plain Vite/React SPA for static hosting (GitHub Pages).
+// Netlify serves from the root; GitHub Pages serves from /panacea-hash-garden/.
+// Netlify sets NETLIFY=true during its build, so the same repo works on both.
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/panacea-hash-garden/' : '/',
+  base: process.env.NETLIFY ? '/' : (mode === 'production' ? '/panacea-hash-garden/' : '/'),
   plugins: [react()],
   resolve: {
     alias: {

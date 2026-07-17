@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { SITE } from '@/lib/site';
+import { submitNetlifyForm } from '@/lib/submitForm';
 import storeProducts from '@/data/store-products.json';
 
 const B = import.meta.env.BASE_URL;
@@ -53,21 +54,12 @@ export default function Merch() {
     e.preventDefault();
     setSending(true);
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${SITE.formEmail}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          idea: form.idea,
-          source: 'Merch Idea',
-          _subject: `PANACEA merch idea from ${form.name}`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
+      await submitNetlifyForm('merch-idea', {
+        name: form.name,
+        email: form.email,
+        idea: form.idea,
+        source: 'Merch Idea',
       });
-      const data = await res.json();
-      if (!res.ok || data.success !== 'true') throw new Error('send failed');
       toast.success('Thanks for your idea! We\'ll take a look.');
       setForm({ name: '', email: '', idea: '' });
     } catch {

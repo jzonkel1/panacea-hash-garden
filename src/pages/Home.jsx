@@ -21,14 +21,14 @@ export default function Home() {
       <BannerDivider />
       <WhySection />
       <SectionDivider flip />
-      <LabVerifiedSection />
+      <MerchPreview />
       <SectionDivider />
       <ReviewsSection />
+      <SectionDivider flip />
+      <LabVerifiedSection />
       <SectionDivider />
       <EventsPreview />
       <SectionDivider flip />
-      <MerchPreview />
-      <SectionDivider />
       <VisitSection />
     </div>
   );

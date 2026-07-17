@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { SITE } from '@/lib/site';
+import { submitNetlifyForm } from '@/lib/submitForm';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -15,22 +16,13 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${SITE.formEmail}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          subject: form.subject,
-          message: form.message,
-          source: 'Contact Page',
-          _subject: `PANACEA website message from ${form.name}`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
+      await submitNetlifyForm('contact', {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+        source: 'Contact Page',
       });
-      const data = await res.json();
-      if (!res.ok || data.success !== 'true') throw new Error('send failed');
       toast.success('Message sent! We\'ll get back to you soon.');
       setForm({ name: '', email: '', subject: '', message: '' });
     } catch {

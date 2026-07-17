@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback so client-side routes resolve (Netlify Forms POSTs are handled before this)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

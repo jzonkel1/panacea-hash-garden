@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { SITE } from '@/lib/site';
+import { submitNetlifyForm } from '@/lib/submitForm';
 
 const COMEDY_MAIN = `${import.meta.env.BASE_URL}b44/2cd58801d.jpg`;
 const ART_MARKET = `${import.meta.env.BASE_URL}b44/5f5ebf081.jpg`;
@@ -24,22 +25,13 @@ export default function Events() {
     e.preventDefault();
     setSending(true);
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${SITE.formEmail}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          'performance type': form.type,
-          message: form.message,
-          source: 'Events Booking',
-          _subject: `PANACEA booking inquiry — ${form.type} (${form.name})`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
+      await submitNetlifyForm('events-booking', {
+        name: form.name,
+        email: form.email,
+        performance_type: form.type,
+        message: form.message,
+        source: 'Events Booking',
       });
-      const data = await res.json();
-      if (!res.ok || data.success !== 'true') throw new Error('send failed');
       toast.success('Booking inquiry sent! We\'ll be in touch soon.');
       setForm({ name: '', email: '', type: '', message: '' });
     } catch {

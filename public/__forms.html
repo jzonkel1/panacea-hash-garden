@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Netlify form detection</title></head>
+<body>
+  <!-- Static forms so Netlify's build-time bots register them. The live React
+       forms POST to these names. Keep field names in sync with the React handlers. -->
+
+  <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="subject" />
+    <textarea name="message"></textarea>
+    <input type="text" name="source" />
+    <input type="text" name="bot-field" />
+  </form>
+
+  <form name="events-booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="performance_type" />
+    <textarea name="message"></textarea>
+    <input type="text" name="source" />
+    <input type="text" name="bot-field" />
+  </form>
+
+  <form name="merch-idea" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="idea"></textarea>
+    <input type="text" name="source" />
+    <input type="text" name="bot-field" />
+  </form>
+</body>
+</html>
