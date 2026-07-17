@@ -152,17 +152,17 @@ export default function HeroSection() {
           transition={{ duration: 0.9, delay: 1.2 }}
         >
           <Link
-            to="/merch"
+            to="/products"
             className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-primary text-primary-foreground text-sm font-medium tracking-wide transition-all duration-300 hover:bg-primary/85 hover:shadow-xl hover:shadow-primary/25 group"
           >
-            Browse Our Merch
+            Browse Products
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <Link
-            to="/events"
+            to="/merch"
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-white/12 bg-white/4 text-[#c8c8c0] text-sm font-medium tracking-wide backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-white/7 hover:text-white"
           >
-            See Events
+            Browse Our Merch
           </Link>
         </motion.div>
 
