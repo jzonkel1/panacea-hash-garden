@@ -117,11 +117,11 @@ export default function HeroSection() {
         </motion.p>
 
         {/* Headline */}
-        <h1 className="font-logo mb-4 md:mb-8 uppercase" style={{ lineHeight: 1.1 }}>
+        <h1 className="font-display mb-4 md:mb-8" style={{ lineHeight: 1.08 }}>
           {lines.map((line, i) => (
             <motion.span
               key={i}
-              className={`block text-[28px] md:text-6xl lg:text-7xl font-semibold tracking-[0.02em] ${
+              className={`block text-4xl md:text-7xl lg:text-[82px] font-medium tracking-tight ${
                 line.accent ? 'text-primary' : 'text-[#e8e8df]'
               }`}
               style={{ textShadow: line.accent ? '0 0 60px rgba(154,194,33,0.35)' : '0 2px 40px rgba(0,0,0,0.8)' }}
