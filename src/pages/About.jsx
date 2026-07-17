@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Heart, Eye, Award, FlaskConical, Cookie, Wheat } from 'lucide-react';
+import Eyebrow from '@/components/Eyebrow';
 
 const FAVICON = `${import.meta.env.BASE_URL}b44/dc844a0e3.png`;
 const RENE_PROFILE = `${import.meta.env.BASE_URL}b44/87572b903.jpg`;
@@ -37,26 +38,6 @@ const values = [
 ];
 
 export default function About() {
-  const philosophyRef = useRef(null);
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    if (!philosophyRef.current || window.innerWidth < 768) return;
-    const rect = philosophyRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateY = (x - centerX) / 10;
-    const rotateX = (centerY - y) / 10;
-    setRotate({ x: rotateX, y: rotateY });
-  };
-
-  const handleMouseLeave = () => {
-    if (window.innerWidth < 768) return;
-    setRotate({ x: 0, y: 0 });
-  };
-
   return (
     <div className="pt-24 pb-24 min-h-screen">
       {/* Hero */}
@@ -99,36 +80,29 @@ export default function About() {
         </div>
       </div>
 
-      {/* Philosophy */}
-      <div className="px-6 mb-24">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            ref={philosophyRef}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            animate={{ rotateX: rotate.x, rotateY: rotate.y }}
-            style={{ perspective: 1200 }}
-            className="glass-card rounded-2xl p-10 md:p-14 text-center relative overflow-hidden shadow-2xl shadow-primary/20"
-          >
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-            <img src={`${import.meta.env.BASE_URL}b44/dc844a0e3.png`} alt="PANACEA" className="w-12 h-12 mx-auto mb-6 opacity-90" />
-            <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-6">Our Philosophy</h2>
-            <p className="text-muted-foreground leading-relaxed text-lg max-w-2xl mx-auto">
-              "We approach every product, every interaction, and every event with the same intention—quality over quantity, depth over flash, and people over profit. PANACEA isn't just where you shop. It's where you belong."
-            </p>
-            <div className="mt-6 text-primary text-sm tracking-[0.3em] uppercase font-medium">— Rene Pena, Founder</div>
-          </motion.div>
-        </div>
+      {/* Philosophy — pull quote */}
+      <div className="px-6 mb-28">
+        <motion.figure
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <img src={`${import.meta.env.BASE_URL}b44/dc844a0e3.png`} alt="PANACEA" className="w-10 h-10 mx-auto mb-8 opacity-80" />
+          <blockquote className="font-display text-2xl md:text-4xl leading-snug tracking-wide text-foreground/90">
+            We approach every product, every interaction, and every event with the same intention — quality over
+            quantity, depth over flash, and <span className="text-primary">people over profit</span>. PANACEA isn't
+            just where you shop. It's where you belong.
+          </blockquote>
+          <figcaption className="mt-8 text-primary text-sm tracking-[0.3em] uppercase font-medium">— Rene Pena, Founder</figcaption>
+        </motion.figure>
       </div>
 
       {/* Craft Production Section */}
       <div className="px-6 mb-24">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Grown. Made. Crafted.</p>
+          <div className="text-center mb-14">
+            <Eyebrow center className="mb-3">Grown. Made. Crafted.</Eyebrow>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-4">We Make What We Sell</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Most shops pull from an anonymous catalog. We don't. PANACEA grows and crafts in-house — and everything is
@@ -136,7 +110,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-14 mb-16">
             {[
               {
                 icon: Leaf,
@@ -163,89 +137,78 @@ export default function About() {
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-card glass-card-hover rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1"
+                  transition={{ delay: i * 0.08 }}
+                  className="border-t border-white/10 py-7 flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-3 md:gap-5"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <Icon className="w-6 h-6 text-primary shrink-0 md:mt-1" />
+                  <div className="md:flex-1">
+                    <h3 className="font-display text-lg font-semibold mb-2 tracking-wide">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed max-w-md mx-auto md:mx-0">{item.desc}</p>
                   </div>
-                  <h3 className="font-display text-lg font-semibold mb-3 tracking-wide">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </motion.div>
               );
             })}
           </div>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl px-8 py-6 text-center border border-primary/15"
+            className="text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center border-t border-primary/20 pt-8"
           >
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mx-auto">
-              <span className="text-foreground font-medium">Transparency isn't a buzzword here — it's how we operate.</span> What we grow, we grow; what we make, we make — and every product is third-party lab-tested with certificates of analysis on file. That's a level of quality control you won't find at most shops in South Texas.
-            </p>
-          </motion.div>
+            <span className="text-foreground font-medium">Transparency isn't a buzzword here — it's how we operate.</span> What we grow, we grow; what we make, we make — and every product is third-party lab-tested with certificates of analysis on file. That's a level of quality control you won't find at most shops in South Texas.
+          </motion.p>
         </div>
       </div>
 
       {/* Founder Blog Post — Genetics */}
       <div className="px-6 mb-24">
-        <div className="max-w-3xl mx-auto">
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card rounded-2xl overflow-hidden"
-          >
-            <div className="p-10 md:p-14">
-              <div className="flex items-center gap-3 mb-8">
-                 <img src={RENE_PROFILE} alt="Rene Pena" className="w-9 h-9 rounded-full object-cover" />
-                 <div>
-                   <p className="text-sm font-medium text-foreground">Rene Pena</p>
-                   <p className="text-xs text-muted-foreground">Owner & Operator, PANACEA</p>
-                   <p className="text-xs text-muted-foreground/70 mt-1">December 6, 2025</p>
-                 </div>
-               </div>
-
-              <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">From the Garden</p>
-              <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-8 leading-snug">
-                Our Approach to Cannabis Genetics
-              </h2>
-
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>
-                  Our work in cannabis genetics is driven by a simple but powerful goal: to create cultivars that perform exceptionally in all growing environments, while truly thriving in living soil. By focusing on varieties that are naturally vigorous, resilient, and adaptable, we aim to give cultivators genetics they can trust — whether they grow indoors, outdoors, or in greenhouses.
-                </p>
-                <p>
-                  At the heart of our breeding program is an obsession with trichome development. Trichomes are where the plant's most valuable compounds are produced, and we select relentlessly for density, structure, and resilience of resin heads. Our genetics are designed to push trichome production to its fullest potential, supporting high cannabinoid content and superior extraction yields while maintaining the integrity and complexity of the plant's natural resin profile.
-                </p>
-                <p>
-                  Equally important is our focus on terpene expression. We are committed to developing truly distinctive and flavorful terpene profiles that go beyond the familiar. By carefully pairing complementary lines and rigorously selecting standout phenotypes, we seek to create cultivars that deliver layered, memorable aromas and flavors — profiles that reflect both their genetic heritage and the rich microbial life of living soil. The result is a portfolio of genetics that delivers not just potency, but a complete sensory experience: deeply aromatic, flavorful, and expressive plants, grown from the ground up.
-                </p>
-              </div>
+        <motion.article
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto md:glass-card md:rounded-2xl md:p-14"
+        >
+          {/* Byline */}
+          <div className="flex items-center gap-3 pb-6 mb-8 border-b border-white/10">
+            <img src={RENE_PROFILE} alt="Rene Pena" className="w-11 h-11 rounded-full object-cover" />
+            <div>
+              <p className="text-sm font-medium text-foreground">Rene Pena</p>
+              <p className="text-xs text-muted-foreground">Owner &amp; Operator, PANACEA · December 6, 2025</p>
             </div>
+          </div>
 
-            <div className="px-10 md:px-14 pb-4">
-              <div className="w-full rounded-xl overflow-hidden">
-                <img
-                  src={`${import.meta.env.BASE_URL}b44/4aef96d96.jpg`}
-                  alt="Tres Leches cultivar in December"
-                  className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-                />
-              </div>
-            </div>
+          <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 font-medium">From the Garden</p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wide mb-8 leading-tight">
+            Our Approach to Cannabis Genetics
+          </h2>
 
-            <div className="px-10 md:px-14 py-7">
-              <p className="text-sm text-muted-foreground italic">
-                Tres Leches pictured above loving December! Shout out to team Panacea! 🌿
-              </p>
-            </div>
-          </motion.article>
-        </div>
+          <div className="space-y-6 text-[15px] md:text-lg text-muted-foreground leading-loose">
+            <p className="first-letter:float-left first-letter:font-display first-letter:text-6xl first-letter:leading-[0.8] first-letter:mr-3 first-letter:mt-1 first-letter:text-primary">
+              Our work in cannabis genetics is driven by a simple but powerful goal: to create cultivars that perform exceptionally in all growing environments, while truly thriving in living soil. By focusing on varieties that are naturally vigorous, resilient, and adaptable, we aim to give cultivators genetics they can trust — whether they grow indoors, outdoors, or in greenhouses.
+            </p>
+            <p>
+              At the heart of our breeding program is an obsession with trichome development. Trichomes are where the plant's most valuable compounds are produced, and we select relentlessly for density, structure, and resilience of resin heads. Our genetics are designed to push trichome production to its fullest potential, supporting high cannabinoid content and superior extraction yields while maintaining the integrity and complexity of the plant's natural resin profile.
+            </p>
+            <p>
+              Equally important is our focus on terpene expression. We are committed to developing truly distinctive and flavorful terpene profiles that go beyond the familiar. By carefully pairing complementary lines and rigorously selecting standout phenotypes, we seek to create cultivars that deliver layered, memorable aromas and flavors — profiles that reflect both their genetic heritage and the rich microbial life of living soil. The result is a portfolio of genetics that delivers not just potency, but a complete sensory experience: deeply aromatic, flavorful, and expressive plants, grown from the ground up.
+            </p>
+          </div>
+
+          <figure className="mt-10 -mx-6 md:mx-0">
+            <img
+              src={`${import.meta.env.BASE_URL}b44/4aef96d96.jpg`}
+              alt="Tres Leches cultivar in December"
+              className="w-full h-auto object-cover md:rounded-xl"
+            />
+            <figcaption className="text-sm text-muted-foreground italic mt-4 px-6 md:px-0 text-center md:text-left">
+              Tres Leches pictured above loving December! Shout out to team Panacea! 🌿
+            </figcaption>
+          </figure>
+        </motion.article>
       </div>
 
       {/* Values */}
@@ -253,7 +216,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <img src={FAVICON} alt="PANACEA" className="w-10 h-10 mx-auto mb-4 opacity-80" />
-            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">What Drives Us</p>
+            <Eyebrow center className="mb-3">What Drives Us</Eyebrow>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Our Values</h2>
           </div>
 
@@ -266,23 +229,23 @@ export default function About() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-14">
             {values.map((value, i) => {
               const Icon = value.icon;
               return (
                 <motion.div
                   key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1"
+                  transition={{ delay: i * 0.08 }}
+                  className="border-t border-white/10 py-8 flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-3 md:gap-5"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <Icon className="w-6 h-6 text-primary shrink-0 md:mt-1" />
+                  <div className="md:flex-1">
+                    <h3 className="font-display text-xl font-semibold mb-2 tracking-wide">{value.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed max-w-md mx-auto md:mx-0">{value.desc}</p>
                   </div>
-                  <h3 className="font-display text-xl font-semibold mb-3 tracking-wide">{value.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{value.desc}</p>
                 </motion.div>
               );
             })}

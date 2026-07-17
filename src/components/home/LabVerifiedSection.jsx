@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldCheck, FlaskConical, BadgeCheck, X, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { ShieldCheck, FlaskConical, BadgeCheck, X, ChevronLeft, ChevronRight, ExternalLink, Maximize2 } from 'lucide-react';
+import Eyebrow from '@/components/Eyebrow';
 
 const B = import.meta.env.BASE_URL;
 
@@ -54,8 +55,9 @@ export default function LabVerifiedSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            className="text-center lg:text-left"
           >
-            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Nothing to Hide</p>
+            <Eyebrow className="mb-3">Nothing to Hide</Eyebrow>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-6 leading-tight">
               Lab-Tested.<br /><span className="text-primary">Verified. Ours.</span>
             </h2>
@@ -69,7 +71,7 @@ export default function LabVerifiedSection() {
               at a few from our shelves.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
               {chips.map((c) => {
                 const Icon = c.icon;
                 return (
@@ -82,7 +84,7 @@ export default function LabVerifiedSection() {
             </div>
 
             <button
-              onClick={() => openAt(0)}
+              onClick={() => openAt(index)}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wide hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20"
             >
               <FlaskConical className="w-4 h-4" />
@@ -90,28 +92,78 @@ export default function LabVerifiedSection() {
             </button>
           </motion.div>
 
-          {/* Thumbnail stack */}
+          {/* Certificates — full grid on desktop, single + carousel on mobile */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="grid grid-cols-3 gap-4"
           >
-            {COAS.map((coa, i) => (
-              <button
-                key={i}
-                onClick={() => openAt(i)}
-                className="group relative rounded-xl overflow-hidden glass-card glass-card-hover aspect-[3/4] transition-all duration-500 hover:-translate-y-1"
-                aria-label={`View COA: ${coa.strain}`}
-              >
-                <img src={coa.img} alt={`${coa.strain} certificate of analysis`} loading="lazy" className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-2.5 pt-6">
-                  <p className="text-[11px] font-medium text-white leading-tight truncate">{coa.strain}</p>
-                  <p className="text-[9px] text-white/60 truncate">{coa.lab}</p>
-                </div>
-              </button>
-            ))}
+            {/* Desktop: all six */}
+            <div className="hidden lg:grid grid-cols-3 gap-4">
+              {COAS.map((coa, i) => (
+                <button
+                  key={i}
+                  onClick={() => openAt(i)}
+                  className="group relative rounded-xl overflow-hidden glass-card glass-card-hover aspect-[3/4] transition-all duration-500 hover:-translate-y-1"
+                  aria-label={`View COA: ${coa.strain}`}
+                >
+                  <img src={coa.img} alt={`${coa.strain} certificate of analysis`} loading="lazy" className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-2.5 pt-6">
+                    <p className="text-[11px] font-medium text-white leading-tight truncate">{coa.strain}</p>
+                    <p className="text-[9px] text-white/60 truncate">{coa.lab}</p>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile: one certificate with inline carousel */}
+            <div className="lg:hidden max-w-[15rem] mx-auto">
+              <div className="relative">
+                <AnimatePresence mode="wait">
+                  <motion.button
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    onClick={() => openAt(index)}
+                    className="group relative block w-full rounded-xl overflow-hidden glass-card aspect-[3/4]"
+                    aria-label={`Enlarge certificate: ${current.strain}`}
+                  >
+                    <img src={current.img} alt={`${current.strain} certificate of analysis`} className="w-full h-full object-cover object-top" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-3 pt-8">
+                      <p className="text-xs font-medium text-white leading-tight truncate">{current.strain}</p>
+                      <p className="text-[10px] text-white/60 truncate">{current.lab}</p>
+                    </div>
+                    <span className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/50 backdrop-blur flex items-center justify-center text-white/90">
+                      <Maximize2 className="w-3.5 h-3.5" />
+                    </span>
+                  </motion.button>
+                </AnimatePresence>
+
+                <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 backdrop-blur flex items-center justify-center text-white hover:bg-black/80 transition-colors" aria-label="Previous certificate">
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 backdrop-blur flex items-center justify-center text-white hover:bg-black/80 transition-colors" aria-label="Next certificate">
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="flex items-center justify-center gap-1.5 mt-4">
+                {COAS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setIndex(i)}
+                    className={`h-1.5 rounded-full transition-all ${i === index ? 'w-5 bg-primary' : 'w-1.5 bg-white/25 hover:bg-white/45'}`}
+                    aria-label={`Certificate ${i + 1}`}
+                  />
+                ))}
+              </div>
+              <p className="text-center text-xs text-muted-foreground/70 mt-3">
+                Tap to enlarge · {index + 1} / {COAS.length}
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -9,14 +9,14 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 bg-background">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
           {/* Brand */}
           <div className="md:col-span-1">
-            <img src={LOGO_URL} alt="PANACEA" className="h-10 w-auto mb-4" />
-            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+            <img src={LOGO_URL} alt="PANACEA" className="h-10 w-auto mb-4 mx-auto md:mx-0" />
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-xs mx-auto md:mx-0">
               Premium botanicals and artful culture in the heart of Corpus Christi.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center md:justify-start gap-3">
               <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-medium">Navigate</h4>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 items-center md:items-start">
               {['/', '/products', '/events', '/merch', '/about', '/contact'].map(path => (
                 <Link key={path} to={path} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
@@ -42,16 +42,16 @@ export default function Footer() {
           <div>
             <h4 className="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-medium">Visit</h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 text-primary/70" />
+              <div className="flex items-start justify-center md:justify-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 text-primary/70 shrink-0" />
                 <span>4914 Everhart Rd<br/>Corpus Christi, TX 78411</span>
               </div>
-              <a href={SITE.phoneHref} className="flex items-center gap-2 hover:text-foreground transition-colors">
-                <Phone className="w-4 h-4 text-primary/70" />
+              <a href={SITE.phoneHref} className="flex items-center justify-center md:justify-start gap-2 hover:text-foreground transition-colors">
+                <Phone className="w-4 h-4 text-primary/70 shrink-0" />
                 <span>{SITE.phone}</span>
               </a>
-              <div className="flex items-start gap-2">
-                <Clock className="w-4 h-4 mt-0.5 text-primary/70" />
+              <div className="flex items-start justify-center md:justify-start gap-2">
+                <Clock className="w-4 h-4 mt-0.5 text-primary/70 shrink-0" />
                 <span>Mon–Sat: 10 AM – 10 PM<br/>Sunday: Closed</span>
               </div>
             </div>

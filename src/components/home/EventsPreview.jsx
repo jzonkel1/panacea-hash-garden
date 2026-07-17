@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Music, Mic, Palette } from 'lucide-react';
+import Eyebrow from '@/components/Eyebrow';
 
 const AUD1 = `${import.meta.env.BASE_URL}b44/7b302f861.jpg`;
 const AUD2 = `${import.meta.env.BASE_URL}b44/9ad2f2f4d.jpg`;
@@ -23,10 +24,11 @@ export default function EventsPreview() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="text-center lg:text-left"
           >
-            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Culture & Community</p>
+            <Eyebrow className="mb-3">Culture &amp; Community</Eyebrow>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-6">Events at PANACEA</h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-muted-foreground leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
               PANACEA is more than a shop—it's a cultural hub. We host comedy nights, live music, art vendor markets, and community pop-ups that bring Corpus Christi together.
             </p>
 
@@ -34,15 +36,15 @@ export default function EventsPreview() {
               {eventTypes.map(et => {
                 const Icon = et.icon;
                 return (
-                  <div key={et.label} className="flex items-center gap-3 glass-card rounded-xl px-4 py-3">
-                    <Icon className="w-5 h-5 text-primary" />
+                  <div key={et.label} className="flex items-center justify-center lg:justify-start gap-3 glass-card rounded-xl px-4 py-3">
+                    <Icon className="w-5 h-5 text-primary shrink-0" />
                     <span className="text-sm font-medium">{et.label}</span>
                   </div>
                 );
               })}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start sm:justify-center lg:justify-start">
               <Link
                 to="/events"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium tracking-wide hover:bg-primary/90 transition-all group"
