@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Send, Loader2 } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Send, Loader2, ChevronLeft, ChevronRight, X, Maximize2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -40,6 +40,16 @@ const featured = [
   },
 ];
 
+// Original local-artist paintings shown in-store — widely varying sizes, so they
+// render as a masonry gallery (no forced equal-height rows / empty boxes).
+const paintings = [
+  { src: `${B}b44/591abe4cd.jpg`, alt: 'Day of the Dead figure painting' },
+  { src: `${B}b44/0b68b9c7a.jpg`, alt: 'Grayscale portrait with roses' },
+  { src: `${B}b44/df0d9277b.jpg`, alt: 'Colorful abstract figure painting' },
+  { src: `${B}b44/844b04ea2.jpg`, alt: 'Starry Night inspired painting' },
+  { src: `${B}b44/01f4b75ae.jpg`, alt: 'Pop art monkey painting' },
+];
+
 // Full storefront grouped by category (see scripts/build-store.mjs)
 const CATEGORY_ORDER = ['Apparel', 'Headwear', 'Footwear', 'Bags', 'Drinkware', 'Accessories'];
 const grouped = CATEGORY_ORDER
@@ -49,6 +59,23 @@ const grouped = CATEGORY_ORDER
 export default function Merch() {
   const [form, setForm] = useState({ name: '', email: '', idea: '' });
   const [sending, setSending] = useState(false);
+  const [artIndex, setArtIndex] = useState(-1);
+  const artOpen = artIndex >= 0;
+
+  const nextArt = useCallback(() => setArtIndex((i) => (i + 1) % paintings.length), []);
+  const prevArt = useCallback(() => setArtIndex((i) => (i - 1 + paintings.length) % paintings.length), []);
+
+  useEffect(() => {
+    if (!artOpen) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') setArtIndex(-1);
+      if (e.key === 'ArrowRight') nextArt();
+      if (e.key === 'ArrowLeft') prevArt();
+    };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [artOpen, nextArt, prevArt]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -248,30 +275,28 @@ export default function Merch() {
             <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-2">Original Paintings In-Store</h2>
             <p className="text-muted-foreground text-sm mt-3">All pieces are originals from local artists. <span className="text-primary font-medium">Ask for availability — selection changes frequently.</span></p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {[
-              { src: `${B}b44/591abe4cd.jpg`, alt: "Day of the Dead figure painting" },
-              { src: `${B}b44/0b68b9c7a.jpg`, alt: "Grayscale portrait with roses" },
-              { src: `${B}b44/df0d9277b.jpg`, alt: "Colorful abstract figure painting" },
-              { src: `${B}b44/844b04ea2.jpg`, alt: "Starry Night inspired painting" },
-              { src: `${B}b44/01f4b75ae.jpg`, alt: "Pop art monkey painting" },
-            ].map((painting, i) => (
-              <motion.div
+          <div className="columns-2 md:columns-3 [column-gap:1rem] max-w-5xl mx-auto">
+            {paintings.map((painting, i) => (
+              <motion.button
                 key={i}
+                onClick={() => setArtIndex(i)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="glass-card rounded-xl overflow-hidden group"
+                transition={{ delay: i * 0.06 }}
+                className="group relative block w-full mb-4 break-inside-avoid rounded-xl overflow-hidden glass-card glass-card-hover"
+                aria-label={`View painting: ${painting.alt}`}
               >
-                <div className="overflow-hidden">
-                  <img
-                    src={painting.src}
-                    alt={painting.alt}
-                    className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                  />
+                <img
+                  src={painting.src}
+                  alt={painting.alt}
+                  loading="lazy"
+                  className="w-full h-auto block opacity-85 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-300">
+                  <Maximize2 className="w-6 h-6 text-white opacity-0 group-hover:opacity-90 transition-opacity duration-300" />
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -332,6 +357,62 @@ export default function Merch() {
           </div>
         </div>
       </div>
+
+      {/* Painting lightbox */}
+      <AnimatePresence>
+        {artOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[120] bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-4 md:p-8"
+            onClick={() => setArtIndex(-1)}
+          >
+            <button
+              onClick={() => setArtIndex(-1)}
+              className="absolute top-5 right-5 w-11 h-11 rounded-full glass-card flex items-center justify-center text-white hover:bg-white/10 transition-colors z-10"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="relative flex items-center justify-center gap-3 md:gap-6 w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
+              <button onClick={prevArt} className="shrink-0 w-11 h-11 md:w-12 md:h-12 rounded-full glass-card flex items-center justify-center text-white hover:bg-white/10 transition-colors" aria-label="Previous">
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={artIndex}
+                  src={paintings[artIndex].src}
+                  alt={paintings[artIndex].alt}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                  className="max-h-[80vh] max-w-full w-auto object-contain rounded-lg shadow-2xl"
+                />
+              </AnimatePresence>
+
+              <button onClick={nextArt} className="shrink-0 w-11 h-11 md:w-12 md:h-12 rounded-full glass-card flex items-center justify-center text-white hover:bg-white/10 transition-colors" aria-label="Next">
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2 mt-6" onClick={(e) => e.stopPropagation()}>
+              {paintings.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setArtIndex(i)}
+                  className={`h-1.5 rounded-full transition-all ${i === artIndex ? 'w-6 bg-primary' : 'w-1.5 bg-white/30 hover:bg-white/50'}`}
+                  aria-label={`Go to painting ${i + 1}`}
+                />
+              ))}
+            </div>
+            <p className="text-white/50 text-xs mt-3">Original local-artist work · Ask in-store for availability</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
