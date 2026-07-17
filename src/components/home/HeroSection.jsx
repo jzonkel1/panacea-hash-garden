@@ -63,7 +63,7 @@ function ParticleCanvas() {
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen flex flex-col overflow-hidden">
+    <section className="relative h-[82vh] md:h-screen flex flex-col overflow-hidden">
 
       {/* Full-bleed background photo */}
       <div className="absolute inset-0">
@@ -94,7 +94,7 @@ export default function HeroSection() {
       <ParticleCanvas />
 
       {/* Content */}
-      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-16 md:pt-32 pb-4 flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-10 md:pt-32 pb-4 flex flex-col items-center md:items-start text-center md:text-left">
 
         {/* Logo */}
         <motion.div
