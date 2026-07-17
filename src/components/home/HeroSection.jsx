@@ -94,7 +94,7 @@ export default function HeroSection() {
       <ParticleCanvas />
 
       {/* Content */}
-      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-10 md:pt-32 pb-4 flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="relative z-20 flex-1 w-full max-w-6xl mx-auto px-8 md:px-14 pt-20 md:pt-32 pb-4 flex flex-col items-center md:items-start text-center md:text-left">
 
         {/* Logo */}
         <motion.div
@@ -152,10 +152,10 @@ export default function HeroSection() {
           transition={{ duration: 0.9, delay: 1.2 }}
         >
           <Link
-            to="/products"
+            to="/merch"
             className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-primary text-primary-foreground text-sm font-medium tracking-wide transition-all duration-300 hover:bg-primary/85 hover:shadow-xl hover:shadow-primary/25 group"
           >
-            Browse Products
+            Browse Our Merch
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <Link
@@ -170,7 +170,7 @@ export default function HeroSection() {
 
       {/* Disclaimer pinned to bottom */}
       <motion.p
-        className="relative z-20 text-center text-[#555550] text-[10px] tracking-[0.35em] uppercase pb-4"
+        className="relative z-20 text-center text-[#555550] text-[9px] md:text-[10px] tracking-[0.12em] md:tracking-[0.35em] uppercase px-4 pb-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
