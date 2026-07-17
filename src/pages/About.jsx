@@ -2,16 +2,16 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Heart, Eye, Award, FlaskConical, Cookie, Wheat } from 'lucide-react';
 
-const FAVICON = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dc844a0e3_favicon.png";
-const RENE_PROFILE = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/87572b903_615485162_10232513471604544_3351147333408530313_n.jpg";
+const FAVICON = `${import.meta.env.BASE_URL}b44/dc844a0e3.png`;
+const RENE_PROFILE = `${import.meta.env.BASE_URL}b44/87572b903.jpg`;
 
-const LOGO_URL = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/39d8c112f_logo.png";
-const FLOWER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/c7cf5b37c_flower2.jpg";
-const OWNER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/414ba8ad0_owner.jpg";
-const GROW1_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/1701a1c93_grow1.jpg";
-const FARMS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2a962baf2_farms.jpg";
-const BUD1_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/88fb6f86e_IMG_4984.jpg";
-const BUD2_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/c59e846a6_IMG_4994.jpg";
+const LOGO_URL = `${import.meta.env.BASE_URL}b44/39d8c112f.png`;
+const FLOWER_IMG = `${import.meta.env.BASE_URL}b44/c7cf5b37c.jpg`;
+const OWNER_IMG = `${import.meta.env.BASE_URL}b44/414ba8ad0.jpg`;
+const GROW1_IMG = `${import.meta.env.BASE_URL}b44/1701a1c93.jpg`;
+const FARMS_IMG = `${import.meta.env.BASE_URL}b44/2a962baf2.jpg`;
+const BUD1_IMG = `${import.meta.env.BASE_URL}b44/88fb6f86e.jpg`;
+const BUD2_IMG = `${import.meta.env.BASE_URL}b44/c59e846a6.jpg`;
 
 const values = [
   {
@@ -114,7 +114,7 @@ export default function About() {
             className="glass-card rounded-2xl p-10 md:p-14 text-center relative overflow-hidden shadow-2xl shadow-primary/20"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-            <img src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dc844a0e3_favicon.png" alt="PANACEA" className="w-12 h-12 mx-auto mb-6 opacity-90" />
+            <img src={`${import.meta.env.BASE_URL}b44/dc844a0e3.png`} alt="PANACEA" className="w-12 h-12 mx-auto mb-6 opacity-90" />
             <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-6">Our Philosophy</h2>
             <p className="text-muted-foreground leading-relaxed text-lg max-w-2xl mx-auto">
               "We approach every product, every interaction, and every event with the same intention—quality over quantity, depth over flash, and people over profit. PANACEA isn't just where you shop. It's where you belong."
@@ -231,7 +231,7 @@ export default function About() {
             <div className="px-10 md:px-14 pb-4">
               <div className="w-full rounded-xl overflow-hidden">
                 <img
-                  src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4aef96d96_tresleches.jpg"
+                  src={`${import.meta.env.BASE_URL}b44/4aef96d96.jpg`}
                   alt="Tres Leches cultivar in December"
                   className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
                 />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const LOGO_URL = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/8c30f1a7c_logo.png";
+const LOGO_URL = `${import.meta.env.BASE_URL}b44/8c30f1a7c.png`;
 
 export default function AgeGate({ onVerified }) {
   const [month, setMonth] = useState('');

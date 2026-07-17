@@ -1,47 +1,48 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Send } from 'lucide-react';
+import { ExternalLink, Send, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { SITE } from '@/lib/site';
 
 // Hats
-const HAT1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/55174b4f5_hat1.jpg";
-const HAT2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/254be84d6_hat2.jpg";
-const CAP1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dac9d2066_baseballcap1.jpg";
-const CAP2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/f2168c53b_baseballcap2.jpg";
-const CAP3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7ea65e7fa_cap1.jpg";
-const CAP4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/d624512db_cap2.jpg";
-const HAT3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2f5df0879_hat1.jpg";
-const HAT4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/6ab2782e0_hat2.jpg";
-const HAT5 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/495baacff_hat3.jpg";
+const HAT1 = `${import.meta.env.BASE_URL}b44/55174b4f5.jpg`;
+const HAT2 = `${import.meta.env.BASE_URL}b44/254be84d6.jpg`;
+const CAP1 = `${import.meta.env.BASE_URL}b44/dac9d2066.jpg`;
+const CAP2 = `${import.meta.env.BASE_URL}b44/f2168c53b.jpg`;
+const CAP3 = `${import.meta.env.BASE_URL}b44/7ea65e7fa.jpg`;
+const CAP4 = `${import.meta.env.BASE_URL}b44/d624512db.jpg`;
+const HAT3 = `${import.meta.env.BASE_URL}b44/2f5df0879.jpg`;
+const HAT4 = `${import.meta.env.BASE_URL}b44/6ab2782e0.jpg`;
+const HAT5 = `${import.meta.env.BASE_URL}b44/495baacff.jpg`;
 // Hoodies
-const HOODIE1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/6ed21bdb1_hoodie1.jpg";
-const HOODIE2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4d2f9be28_hoodie2.jpg";
-const HOODIE3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/d2139506f_otherhoodie1.jpg";
-const HOODIE4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e6407b193_otherhoodie2.jpg";
+const HOODIE1 = `${import.meta.env.BASE_URL}b44/6ed21bdb1.jpg`;
+const HOODIE2 = `${import.meta.env.BASE_URL}b44/4d2f9be28.jpg`;
+const HOODIE3 = `${import.meta.env.BASE_URL}b44/d2139506f.jpg`;
+const HOODIE4 = `${import.meta.env.BASE_URL}b44/e6407b193.jpg`;
 // Vests
-const VEST1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/250c5994f_vest1.jpg";
-const VEST2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5549df18e_vest2.jpg";
+const VEST1 = `${import.meta.env.BASE_URL}b44/250c5994f.jpg`;
+const VEST2 = `${import.meta.env.BASE_URL}b44/5549df18e.jpg`;
 // Shirts
-const SHIRT1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/576dbb420_othershirt1.jpg";
-const SHIRT2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/95f5150e5_othershirt2.jpg";
-const SHIRT3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/73122d399_shirt1.jpg";
+const SHIRT1 = `${import.meta.env.BASE_URL}b44/576dbb420.jpg`;
+const SHIRT2 = `${import.meta.env.BASE_URL}b44/95f5150e5.jpg`;
+const SHIRT3 = `${import.meta.env.BASE_URL}b44/73122d399.jpg`;
 // Jackets
-const JACKET1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cc7bf6ecb_jacket1.jpg";
-const JACKET2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7570c256a_jacket2.jpg";
+const JACKET1 = `${import.meta.env.BASE_URL}b44/cc7bf6ecb.jpg`;
+const JACKET2 = `${import.meta.env.BASE_URL}b44/7570c256a.jpg`;
 // Shoes & Bags
-const SHOES1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/ef29a4942_shoes1.jpg";
-const SHOES2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/86cc254fa_shoes2.jpg";
-const OSHOES1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/041f5f629_othershoes1.jpg";
-const OSHOES2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/260a78e5c_othershoes2.jpg";
-const BACKPACK = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/38d15e3f4_backpack.jpg";
+const SHOES1 = `${import.meta.env.BASE_URL}b44/ef29a4942.jpg`;
+const SHOES2 = `${import.meta.env.BASE_URL}b44/86cc254fa.jpg`;
+const OSHOES1 = `${import.meta.env.BASE_URL}b44/041f5f629.jpg`;
+const OSHOES2 = `${import.meta.env.BASE_URL}b44/260a78e5c.jpg`;
+const BACKPACK = `${import.meta.env.BASE_URL}b44/38d15e3f4.jpg`;
 // Merch store photos
-const MERCH1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a54544c32_merch.jpg";
-const MERCH2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/8960807d0_merch2.jpg";
-const MERCH3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7e5dd18d8_IMG_4978.jpg";
-const MERCH4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/64d89d53e_merch.jpg";
+const MERCH1 = `${import.meta.env.BASE_URL}b44/a54544c32.jpg`;
+const MERCH2 = `${import.meta.env.BASE_URL}b44/8960807d0.jpg`;
+const MERCH3 = `${import.meta.env.BASE_URL}b44/7e5dd18d8.jpg`;
+const MERCH4 = `${import.meta.env.BASE_URL}b44/64d89d53e.jpg`;
 
 const merchItems = [
   {
@@ -124,15 +125,51 @@ const merchItems = [
   },
 ];
 
-const MERCH_STORE_URL = "https://panaceahg.printful.me/";
+const MERCH_STORE_URL = SITE.merchStoreUrl;
+const B = import.meta.env.BASE_URL;
+
+// Live products pulled from the Printful storefront — each deep-links to its product page.
+const liveProducts = [
+  { img: `${B}merch/champion-hoodie.jpg`, name: 'Unisex Champion Hoodie', price: 'From $45', tag: 'Apparel', slug: 'unisex-champion-hoodie' },
+  { img: `${B}merch/columbia-jacket.jpg`, name: 'Columbia Soft Shell Jacket', price: 'From $103.50', tag: 'Outerwear', slug: 'columbia-soft-shell-jacket' },
+  { img: `${B}merch/adidas-cap.jpg`, name: 'adidas Performance Cap', price: 'From $40', tag: 'Hats', slug: 'adidas-performance-cap' },
+  { img: `${B}merch/golf-rope-cap.jpg`, name: 'Golf Rope Cap', price: 'From $28.50', tag: 'Hats', slug: 'golf-rope-cap' },
+  { img: `${B}merch/ua-backpack.jpg`, name: 'Under Armour® Backpack', price: 'From $80', tag: 'Accessories', slug: 'under-armour-backpack' },
+  { img: `${B}merch/embroidered-beanie.jpg`, name: 'Embroidered Beanie', price: 'From $20', tag: 'Hats', slug: 'embroidered-beanie' },
+  { img: `${B}merch/classic-tee.jpg`, name: 'Unisex Classic Tee', price: 'From $15', tag: 'Apparel', slug: 'unisex-classic-tee' },
+  { img: `${B}merch/stickers-purple.jpg`, name: 'Bubble-Free Stickers', price: 'From $4', tag: 'Accessories', slug: 'bubble-free-stickers-panacea-purple' },
+];
 
 export default function Merch() {
   const [form, setForm] = useState({ name: '', email: '', idea: '' });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success('Thanks for your idea! We\'ll take a look.');
-    setForm({ name: '', email: '', idea: '' });
+    setSending(true);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${SITE.formEmail}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          idea: form.idea,
+          source: 'Merch Idea',
+          _subject: `PANACEA merch idea from ${form.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.success !== 'true') throw new Error('send failed');
+      toast.success('Thanks for your idea! We\'ll take a look.');
+      setForm({ name: '', email: '', idea: '' });
+    } catch {
+      toast.error('Something went wrong. Please try again or call us.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -140,7 +177,7 @@ export default function Merch() {
       {/* Hero */}
       <div className="relative h-[60vh] w-full overflow-hidden mb-16">
         <img
-          src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/100671347_expand_image_borders_without_changing_202605032048.jpg"
+          src={`${import.meta.env.BASE_URL}b44/100671347.jpg`}
           alt="PANACEA Merch"
           className="w-full h-full object-cover object-bottom"
         />
@@ -163,6 +200,53 @@ export default function Merch() {
         </div>
       </div>
 
+      {/* Shop Online — live from the Printful store */}
+      <div className="px-6 mb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Shop Online</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wide mb-3">Order & Ship to Your Door</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              A few favorites from our online store — tap any item to pick your size and color and check out.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {liveProducts.map((p, i) => (
+              <motion.a
+                key={p.slug}
+                href={`${MERCH_STORE_URL}product/${p.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="glass-card glass-card-hover rounded-2xl overflow-hidden group transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="aspect-square bg-white/5 flex items-center justify-center overflow-hidden p-4">
+                  <img src={p.img} alt={p.name} loading="lazy" className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-5 border-t border-white/5">
+                  <p className="text-primary text-[10px] tracking-[0.25em] uppercase mb-1.5 font-medium">{p.tag}</p>
+                  <h3 className="font-display text-base font-semibold tracking-wide leading-snug mb-1">{p.name}</h3>
+                  <span className="text-primary text-sm">{p.price}</span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href={MERCH_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary text-sm tracking-wide hover:underline"
+            >
+              See all 25+ items in the store <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Local Art Section — below hero */}
       <div className="px-6 mb-20">
         <div className="max-w-7xl mx-auto">
@@ -175,7 +259,7 @@ export default function Merch() {
               className="rounded-2xl overflow-hidden"
             >
               <img
-                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7e5dd18d8_IMG_4978.jpg"
+                src={`${import.meta.env.BASE_URL}b44/7e5dd18d8.jpg`}
                 alt="PANACEA art and merch display case"
                 className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
               />
@@ -286,11 +370,11 @@ export default function Merch() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/591abe4cd_44.jpg", alt: "Day of the Dead figure painting" },
-              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/0b68b9c7a_IMG_4984.jpg", alt: "Grayscale portrait with roses" },
-              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/df0d9277b_IMG_4991.jpg", alt: "Colorful abstract figure painting" },
-              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/844b04ea2_IMG_4994.jpg", alt: "Starry Night inspired painting" },
-              { src: "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/01f4b75ae_monkey.jpg", alt: "Pop art monkey painting" },
+              { src: `${import.meta.env.BASE_URL}b44/591abe4cd.jpg`, alt: "Day of the Dead figure painting" },
+              { src: `${import.meta.env.BASE_URL}b44/0b68b9c7a.jpg`, alt: "Grayscale portrait with roses" },
+              { src: `${import.meta.env.BASE_URL}b44/df0d9277b.jpg`, alt: "Colorful abstract figure painting" },
+              { src: `${import.meta.env.BASE_URL}b44/844b04ea2.jpg`, alt: "Starry Night inspired painting" },
+              { src: `${import.meta.env.BASE_URL}b44/01f4b75ae.jpg`, alt: "Pop art monkey painting" },
             ].map((painting, i) => (
               <motion.div
                 key={i}
@@ -360,9 +444,9 @@ export default function Merch() {
                   className="bg-white/5 border-white/10 focus:border-primary/50"
                 />
               </div>
-              <Button type="submit" className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide">
-                <Send className="w-4 h-4 mr-2" />
-                Submit Idea
+              <Button type="submit" disabled={sending} className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide">
+                {sending ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
+                {sending ? 'Sending…' : 'Submit Idea'}
               </Button>
             </form>
           </div>

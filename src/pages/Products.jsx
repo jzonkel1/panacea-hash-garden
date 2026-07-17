@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Droplets, Wine, Cookie, Sparkles, Wrench, MapPin } from 'lucide-react';
 
-const FLOWER_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/aac55d1a6_flower.jpg";
-const FLOWER2_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/b86cd6422_flower2.jpg";
-const DRINKS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd1d1ce9a_Drinks_on_smoky_background_202605031815.jpeg";
-const EDIBLES_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/bc1f23666_generated_image.png";
-const EDIBLES2_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/6ecfadbbb_generated_image.png";
-const CONCENTRATE_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd83be047_concentrate.jpg";
-const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4eb149aeb_Smokey_black_background_202605041646.jpeg";
-const GLASS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a50809387_glass.JPG";
-const ROLLING_PAPERS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/7a23ded7e_Raw_rolling_papers_smoky_background_202605041639.jpeg";
+const FLOWER_IMG = `${import.meta.env.BASE_URL}b44/aac55d1a6.jpg`;
+const FLOWER2_IMG = `${import.meta.env.BASE_URL}b44/b86cd6422.jpg`;
+const DRINKS_IMG = `${import.meta.env.BASE_URL}b44/cd1d1ce9a.jpeg`;
+const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/bc1f23666.png`;
+const EDIBLES2_IMG = `${import.meta.env.BASE_URL}b44/6ecfadbbb.png`;
+const CONCENTRATE_IMG = `${import.meta.env.BASE_URL}b44/cd83be047.jpg`;
+const GRINDER_IMG = `${import.meta.env.BASE_URL}b44/4eb149aeb.jpeg`;
+const GLASS_IMG = `${import.meta.env.BASE_URL}b44/a50809387.JPG`;
+const ROLLING_PAPERS_IMG = `${import.meta.env.BASE_URL}b44/7a23ded7e.jpeg`;
 
 const categories = [
   { id: 'all', label: 'All Products', icon: Sparkles },
@@ -142,7 +142,7 @@ export default function Products() {
               className="rounded-2xl overflow-hidden"
             >
               <img
-                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/46582733d_IMG_4979.jpg"
+                src={`${import.meta.env.BASE_URL}b44/46582733d.jpg`}
                 alt="PANACEA in-store accessories display"
                 className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
               />
@@ -155,7 +155,7 @@ export default function Products() {
               className="rounded-2xl overflow-hidden"
             >
               <img
-                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e485a9ba5_IMG_4001.jpg"
+                src={`${import.meta.env.BASE_URL}b44/e485a9ba5.jpg`}
                 alt="PANACEA in-store rolling papers and accessories"
                 className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
               />

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const LOGO_URL = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/8c30f1a7c_logo.png";
+const LOGO_URL = `${import.meta.env.BASE_URL}b44/8c30f1a7c.png`;
 
 const NAV_LINKS = [
   { label: 'Home', path: '/' },
@@ -108,7 +108,7 @@ export default function Navbar() {
             </div>
             <div className="mt-12 pt-8 border-t border-white/5">
               <p className="text-[#555550] text-sm">4914 Everhart Rd, Corpus Christi, TX</p>
-              <p className="text-[#555550] text-sm mt-1">(361) 261-3880</p>
+              <p className="text-[#555550] text-sm mt-1">(361) 752-4168</p>
             </div>
           </motion.div>
         )}

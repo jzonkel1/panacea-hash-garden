@@ -1,30 +1,55 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Music, Mic, Palette, Users, Send } from 'lucide-react';
+import { Music, Mic, Palette, Users, Send, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { SITE } from '@/lib/site';
 import EventCalendar from '../components/EventCalendar';
 
-const COMEDY_MAIN = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/2cd58801d_comed65.jpg";
-const MUSIC1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/081328a46_music1.jpg";
-const ART_MARKET = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5f5ebf081_505899020_10229857296121817_2446135706567305270_n.jpg";
-const CATERING = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/759d9388b_catering.jpg";
-const AUD1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/7b302f861_audience.jpg";
-const AUD2 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/f201220af_audience2.jpg";
-const COMEDY2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/b15629c27_comedy2.jpg";
-const COMEDY3 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/03a32916e_comedy3.jpg";
-const COMEDY4 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/1c090ee5a_comedy4.jpg";
-const COFFTEA = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/f446d36e1_coffeetea.jpg";
+const COMEDY_MAIN = `${import.meta.env.BASE_URL}b44/2cd58801d.jpg`;
+const MUSIC1 = `${import.meta.env.BASE_URL}b44/081328a46.jpg`;
+const ART_MARKET = `${import.meta.env.BASE_URL}b44/5f5ebf081.jpg`;
+const CATERING = `${import.meta.env.BASE_URL}b44/759d9388b.jpg`;
+const AUD1 = `${import.meta.env.BASE_URL}b44/7b302f861.jpg`;
+const AUD2 = `${import.meta.env.BASE_URL}b44/f201220af.jpg`;
+const COMEDY2 = `${import.meta.env.BASE_URL}b44/b15629c27.jpg`;
+const COMEDY3 = `${import.meta.env.BASE_URL}b44/03a32916e.jpg`;
+const COMEDY4 = `${import.meta.env.BASE_URL}b44/1c090ee5a.jpg`;
+const COFFTEA = `${import.meta.env.BASE_URL}b44/f446d36e1.jpg`;
 
 export default function Events() {
   const [form, setForm] = useState({ name: '', email: '', type: '', message: '' });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success('Booking inquiry sent! We\'ll be in touch soon.');
-    setForm({ name: '', email: '', type: '', message: '' });
+    setSending(true);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${SITE.formEmail}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          'performance type': form.type,
+          message: form.message,
+          source: 'Events Booking',
+          _subject: `PANACEA booking inquiry — ${form.type} (${form.name})`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.success !== 'true') throw new Error('send failed');
+      toast.success('Booking inquiry sent! We\'ll be in touch soon.');
+      setForm({ name: '', email: '', type: '', message: '' });
+    } catch {
+      toast.error('Something went wrong. Please call us instead.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -33,7 +58,7 @@ export default function Events() {
       {/* Hero */}
       <div className="relative h-[70vh] w-full overflow-hidden mb-24">
         <img
-           src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/53ba46053_event.jpg"
+           src={`${import.meta.env.BASE_URL}b44/53ba46053.jpg`}
            alt="PANACEA Events"
            className="w-full h-full object-cover object-center"
          />
@@ -324,9 +349,9 @@ export default function Events() {
                   className="bg-white/5 border-white/10 focus:border-primary/50"
                 />
               </div>
-              <Button type="submit" className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide">
-                <Send className="w-4 h-4 mr-2" />
-                Submit Booking Inquiry
+              <Button type="submit" disabled={sending} className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide">
+                {sending ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
+                {sending ? 'Sending…' : 'Submit Booking Inquiry'}
               </Button>
             </form>
           </div>

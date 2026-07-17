@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Music, Mic, Palette } from 'lucide-react';
 
-const AUD1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/7b302f861_audience.jpg";
-const AUD2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9ad2f2f4d_audience2.jpg";
+const AUD1 = `${import.meta.env.BASE_URL}b44/7b302f861.jpg`;
+const AUD2 = `${import.meta.env.BASE_URL}b44/9ad2f2f4d.jpg`;
 
 const eventTypes = [
   { icon: Mic, label: 'Comedy Nights' },

@@ -1,18 +1,43 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Clock, Send, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Clock, Send, AlertCircle, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { SITE } from '@/lib/site';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success('Message sent! We\'ll get back to you soon.');
-    setForm({ name: '', email: '', subject: '', message: '' });
+    setSending(true);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${SITE.formEmail}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+          source: 'Contact Page',
+          _subject: `PANACEA website message from ${form.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.success !== 'true') throw new Error('send failed');
+      toast.success('Message sent! We\'ll get back to you soon.');
+      setForm({ name: '', email: '', subject: '', message: '' });
+    } catch {
+      toast.error('Something went wrong. Please call or text us instead.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -81,9 +106,9 @@ export default function Contact() {
                       className="bg-white/5 border-white/10 focus:border-primary/50"
                     />
                   </div>
-                  <Button type="submit" className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide">
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                  <Button type="submit" disabled={sending} className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide">
+                    {sending ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
+                    {sending ? 'Sending…' : 'Send Message'}
                   </Button>
                 </form>
               </div>
@@ -115,7 +140,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium tracking-wide mb-1">Phone</h3>
-                    <a href="tel:3612613880" className="text-muted-foreground text-sm hover:text-primary transition-colors">(361) 261-3880</a>
+                    <a href={SITE.phoneHref} className="text-muted-foreground text-sm hover:text-primary transition-colors">{SITE.phone}</a>
                   </div>
                 </div>
 

@@ -96,7 +96,7 @@ export default function WhySection() {
           >
             <div className="w-full rounded-xl overflow-hidden mb-5" style={{ height: '140px' }}>
               <img
-                src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/e480f5c04_iguana.jpg"
+                src={`${import.meta.env.BASE_URL}b44/e480f5c04.jpg`}
                 alt="PANACEA's Iguana Mascot"
                 className="w-full h-full object-cover object-center opacity-80 hover:opacity-100 transition-opacity duration-500"
               />

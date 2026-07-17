@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Leaf, Droplets, Wine, Cookie, Sparkles, Wrench } from 'lucide-react';
 
-const FLOWER_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/aac55d1a6_flower.jpg";
-const FLOWER2_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/b86cd6422_flower2.jpg";
-const DRINKS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd1d1ce9a_Drinks_on_smoky_background_202605031815.jpeg";
-const EDIBLES_IMG = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/4470748cb_edibles.jpg";
-const CONCENTRATE_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cd83be047_concentrate.jpg";
-const GRINDER_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/4eb149aeb_Smokey_black_background_202605041646.jpeg";
-const GLASS_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/a50809387_glass.JPG";
+const FLOWER_IMG = `${import.meta.env.BASE_URL}b44/aac55d1a6.jpg`;
+const FLOWER2_IMG = `${import.meta.env.BASE_URL}b44/b86cd6422.jpg`;
+const DRINKS_IMG = `${import.meta.env.BASE_URL}b44/cd1d1ce9a.jpeg`;
+const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/4470748cb.jpg`;
+const CONCENTRATE_IMG = `${import.meta.env.BASE_URL}b44/cd83be047.jpg`;
+const GRINDER_IMG = `${import.meta.env.BASE_URL}b44/4eb149aeb.jpeg`;
+const GLASS_IMG = `${import.meta.env.BASE_URL}b44/a50809387.JPG`;
 
 const categories = [
   { name: 'Flower', id: 'flower', desc: 'Hand-selected premium strains', icon: Leaf, image: FLOWER_IMG },

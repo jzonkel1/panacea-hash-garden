@@ -1,0 +1,24 @@
+# PANACEA Hash Garden
+
+> Premium 21+ smoke shop and botanical apothecary in Corpus Christi, Texas. PANACEA grows its own flower and makes its own concentrates and edibles — plus artisan glass, THC beverages, accessories, and branded merch. It's also a community venue hosting comedy, live music, and local art & vendor markets.
+
+- Address: 4914 Everhart Rd, Corpus Christi, TX 78411
+- Phone: (361) 752-4168
+- Hours: Monday–Saturday 10 AM–10 PM, closed Sunday
+- Age policy: 21+ only
+- Founder: Rene Pena
+- Sales model: botanicals in-store only (no online checkout); branded merch ships nationwide via https://panaceahg.printful.me/
+
+## Pages
+
+- [Home](https://jzonkel1.github.io/panacea-hash-garden/): Overview of the shop, categories, events, merch, and location
+- [Products](https://jzonkel1.github.io/panacea-hash-garden/products): In-store catalog — house-grown flower, in-house concentrates, glass, THC drinks, homemade edibles, accessories
+- [Events](https://jzonkel1.github.io/panacea-hash-garden/events): Backyard comedy nights, live music, art & vendor markets, events calendar, and performer/vendor booking
+- [Merch](https://jzonkel1.github.io/panacea-hash-garden/merch): PANACEA-branded apparel (hoodies, caps, jackets, tees, backpacks) shipped via the online store, plus original paintings from local Corpus Christi artists in-store
+- [About](https://jzonkel1.github.io/panacea-hash-garden/about): Founder Rene Pena's story, the "grown, made, crafted" philosophy, and the approach to cannabis genetics and cultivation
+- [Contact](https://jzonkel1.github.io/panacea-hash-garden/contact): Location map, hours, phone, and message form
+
+## Notes
+
+- PANACEA sells federally legal hemp-derived products to adults 21 and over in compliance with Texas law.
+- The shop grows its own flower and produces its own concentrates and edibles for full transparency and quality control.

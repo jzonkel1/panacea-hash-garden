@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
+import { SITE } from '@/lib/site';
 
 export default function VisitSection() {
   return (
@@ -42,7 +43,7 @@ export default function VisitSection() {
           >
             {/* Background photo */}
             <img
-              src="https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/9e3168c89_unnamed2.jpg"
+              src={`${import.meta.env.BASE_URL}b44/9e3168c89.jpg`}
               alt=""
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
@@ -67,7 +68,7 @@ export default function VisitSection() {
                 </div>
                 <div>
                   <h3 className="font-medium tracking-wide mb-1">Phone</h3>
-                  <a href="tel:3612613880" className="text-muted-foreground hover:text-primary transition-colors">(361) 261-3880</a>
+                  <a href={SITE.phoneHref} className="text-muted-foreground hover:text-primary transition-colors">{SITE.phone}</a>
                 </div>
               </div>
 

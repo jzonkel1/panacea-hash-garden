@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const LOGO_URL = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/8c30f1a7c_logo.png";
-const PLANT_IMG = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/5f37035d2_4znYdhotWB8MRAXCvKqPiN8OQvso5_3F8xx_zzNf57EipoEHaVyD6GxK8WK_ww-8Ssux02lW6NSLyNCb7y_Kl952OcZKSnhh_kRN30EzohXwOOQIub82q5BEuYaHoLTTGsYZOl5Hj6of-JenpwmoeN-jdKSqfYxVhOukPi7aJLaRv2MLtqBr.jpg";
+const LOGO_URL = `${import.meta.env.BASE_URL}b44/8c30f1a7c.png`;
+const PLANT_IMG = `${import.meta.env.BASE_URL}b44/5f37035d2.jpg`;
 
 const lines = [
   { text: 'Premium Botanicals.', accent: false },

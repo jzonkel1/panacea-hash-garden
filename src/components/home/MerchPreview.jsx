@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
-const HAT1 = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/55174b4f5_hat1.jpg";
-const HAT2 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/495baacff_hat3.jpg";
-const VEST1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/250c5994f_vest1.jpg";
-const CAP1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/dac9d2066_baseballcap1.jpg";
+const HAT1 = `${import.meta.env.BASE_URL}b44/55174b4f5.jpg`;
+const HAT2 = `${import.meta.env.BASE_URL}b44/495baacff.jpg`;
+const VEST1 = `${import.meta.env.BASE_URL}b44/250c5994f.jpg`;
+const CAP1 = `${import.meta.env.BASE_URL}b44/dac9d2066.jpg`;
 
-const HOODIE1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/6ed21bdb1_hoodie1.jpg";
-const JACKET1 = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/cc7bf6ecb_jacket1.jpg";
+const HOODIE1 = `${import.meta.env.BASE_URL}b44/6ed21bdb1.jpg`;
+const JACKET1 = `${import.meta.env.BASE_URL}b44/cc7bf6ecb.jpg`;
 
 const merchItems = [
   { name: 'Classic Dad Hat', image: HAT1 },

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, Facebook } from 'lucide-react';
+import { SITE } from '@/lib/site';
 
-const LOGO_URL = "https://media.base44.com/images/public/user_69b18e558b14ccaa06b413c4/8c30f1a7c_logo.png";
+const LOGO_URL = `${import.meta.env.BASE_URL}b44/8c30f1a7c.png`;
 
 export default function Footer() {
   return (
@@ -12,9 +13,17 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <img src={LOGO_URL} alt="PANACEA" className="h-10 w-auto mb-4" />
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
               Premium botanicals and artful culture in the heart of Corpus Christi.
             </p>
+            <div className="flex items-center gap-3">
+              <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                <Facebook className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
           {/* Navigation */}
@@ -37,10 +46,10 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 mt-0.5 text-primary/70" />
                 <span>4914 Everhart Rd<br/>Corpus Christi, TX 78411</span>
               </div>
-              <div className="flex items-center gap-2">
+              <a href={SITE.phoneHref} className="flex items-center gap-2 hover:text-foreground transition-colors">
                 <Phone className="w-4 h-4 text-primary/70" />
-                <span>(361) 261-3880</span>
-              </div>
+                <span>{SITE.phone}</span>
+              </a>
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 mt-0.5 text-primary/70" />
                 <span>Mon–Sat: 10 AM – 10 PM<br/>Sunday: Closed</span>
@@ -52,7 +61,7 @@ export default function Footer() {
           <div>
             <h4 className="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-medium">Legal</h4>
             <p className="text-xs text-muted-foreground/60 leading-relaxed">
-              Must be 21 or older to purchase. Products are intended for adult use only. PANACEA HASH GARDEN does not ship products. All sales are final and in-store only.
+              Must be 21 or older to purchase. Products are intended for adult use only. Botanicals are sold in-store only; branded merch ships nationwide via our online store.
             </p>
           </div>
         </div>

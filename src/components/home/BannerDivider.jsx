@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BANNER_URL = "https://media.base44.com/images/public/69f7b435c4e1fadd6b3c10d5/1d8096159_panacea_ultrawide_banner_not_stretched.png";
+const BANNER_URL = `${import.meta.env.BASE_URL}b44/1d8096159.png`;
 
 export default function BannerDivider() {
   return (
