@@ -123,7 +123,7 @@ export default function ReviewsSection() {
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Background video */}
       <video
-        src="https://media.base44.com/videos/public/69f7b435c4e1fadd6b3c10d5/04ecf4c6b_9694807-hd_1920_1080_25fps.mp4"
+        src={`${import.meta.env.BASE_URL}smoke.mp4`}
         autoPlay
         muted
         loop

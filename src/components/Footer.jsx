@@ -61,7 +61,7 @@ export default function Footer() {
           <div>
             <h4 className="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-medium">Legal</h4>
             <p className="text-xs text-muted-foreground/60 leading-relaxed">
-              Must be 21 or older to purchase. Products are intended for adult use only. Botanicals are sold in-store only; branded merch ships nationwide via our online store.
+              All products are hemp-derived and contain no more than 0.3% Delta-9 THC by dry weight, in compliance with the 2018 Farm Bill and Texas law. Third-party lab-tested; Certificates of Analysis available on request. Must be 21 or older to purchase — intended for adult use only. Product selection is subject to availability and applicable law. Botanicals are sold in-store only; branded merch ships nationwide via our online store.
             </p>
           </div>
         </div>

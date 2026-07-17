@@ -131,7 +131,8 @@ export default function About() {
             <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">Grown. Made. Crafted.</p>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-4">We Make What We Sell</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Most shops source from a catalog. We grow our own. PANACEA controls the entire process — from seed to shelf — so you always know exactly what you're getting.
+              Most shops pull from an anonymous catalog. We don't. PANACEA grows and crafts in-house — and everything is
+              third-party lab-tested — so you always know exactly what's in your hands and where it came from.
             </p>
           </div>
 
@@ -139,18 +140,18 @@ export default function About() {
             {[
               {
                 icon: Leaf,
-                title: 'Our Own Flower',
-                desc: 'Every strain of flower we carry is cultivated in-house. We grow it, cure it, and bring it straight to you — no middlemen, no mystery.',
+                title: 'Grown In-House',
+                desc: 'We cultivate our own hemp flower — grown, cured, and hand-finished. Our genetics program means we know each cultivar from the ground up.',
               },
               {
                 icon: FlaskConical,
-                title: 'In-House Concentrates',
-                desc: 'Our concentrates are crafted from our own harvests. From live rosin to pressed hash, everything is made with precision and care.',
+                title: 'Made In Small Batches',
+                desc: 'Crafted here, in small batches, with precision and care — not mass-produced by a factory three states away.',
               },
               {
                 icon: Cookie,
                 title: 'Homemade Edibles',
-                desc: 'We make our own edibles in-house with clean ingredients and exact dosing. No mass-produced mystery — just good, intentional product.',
+                desc: 'House-made edibles with clean ingredients and exact, consistent dosing. No mystery — just good, intentional product.',
               },
               {
                 icon: Wheat,
@@ -185,7 +186,7 @@ export default function About() {
             className="glass-card rounded-2xl px-8 py-6 text-center border border-primary/15"
           >
             <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mx-auto">
-              <span className="text-foreground font-medium">Transparency isn't a buzzword here — it's how we operate.</span> When you buy flower from PANACEA, it came from our farm. When you grab a concentrate, we made it. That's a level of quality control you won't find at most shops in South Texas.
+              <span className="text-foreground font-medium">Transparency isn't a buzzword here — it's how we operate.</span> What we grow, we grow; what we make, we make — and every product is third-party lab-tested with certificates of analysis on file. That's a level of quality control you won't find at most shops in South Texas.
             </p>
           </motion.div>
         </div>

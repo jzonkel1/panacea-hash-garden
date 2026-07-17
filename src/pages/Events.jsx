@@ -6,12 +6,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { SITE } from '@/lib/site';
-import EventCalendar from '../components/EventCalendar';
 
 const COMEDY_MAIN = `${import.meta.env.BASE_URL}b44/2cd58801d.jpg`;
-const MUSIC1 = `${import.meta.env.BASE_URL}b44/081328a46.jpg`;
 const ART_MARKET = `${import.meta.env.BASE_URL}b44/5f5ebf081.jpg`;
-const CATERING = `${import.meta.env.BASE_URL}b44/759d9388b.jpg`;
 const AUD1 = `${import.meta.env.BASE_URL}b44/7b302f861.jpg`;
 const AUD2 = `${import.meta.env.BASE_URL}b44/f201220af.jpg`;
 const COMEDY2 = `${import.meta.env.BASE_URL}b44/b15629c27.jpg`;
@@ -77,10 +74,12 @@ export default function Events() {
               Book an Event
             </a>
             <a
-              href="#calendar"
+              href={SITE.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg glass-card border border-white/15 text-white font-medium tracking-wide hover:bg-white/10 transition-all"
             >
-              View Events Calendar
+              Follow for Updates
             </a>
           </div>
         </div>
@@ -159,7 +158,7 @@ export default function Events() {
               transition={{ duration: 0.8 }}
               className="rounded-2xl overflow-hidden order-2 lg:order-1"
             >
-              <img src={MUSIC1} alt="Live Music at PANACEA" className="w-full h-80 object-cover opacity-90" />
+              <img src={AUD2} alt="Live Music at PANACEA" className="w-full h-80 object-cover opacity-90" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -238,7 +237,7 @@ export default function Events() {
               transition={{ duration: 0.8 }}
               className="rounded-2xl overflow-hidden order-2 lg:order-1"
             >
-              <img src={CATERING} alt="Community Gathering at PANACEA" className="w-full h-80 object-cover opacity-90" />
+              <img src={AUD1} alt="Community Gathering at PANACEA" className="w-full h-80 object-cover opacity-90" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -267,8 +266,6 @@ export default function Events() {
         </div>
       </div>
 
-      {/* Event Calendar */}
-       <EventCalendar />
 
        {/* Photo Gallery */}
        <div className="px-6 mb-28">

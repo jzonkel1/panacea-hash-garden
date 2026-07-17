@@ -1,127 +1,144 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Award, Eye, Heart, Sparkles } from 'lucide-react';
+import { Users, Palette, ShieldCheck, MapPin, Sprout, PartyPopper } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const reasons = [
-  {
-    icon: Users,
-    title: 'Knowledgeable Staff',
-    desc: 'Our team is trained to guide you through every product, strain, and experience with care and expertise.',
-  },
-  {
-    icon: Award,
-    title: 'In-House Craftsmanship',
-    desc: 'From cultivation insights to curated selections, we bring artisan-level attention to everything we stock.',
-  },
-  {
-    icon: Eye,
-    title: 'Carefully Selected Quality',
-    desc: 'Every product on our shelves passes through rigorous selection—only the best makes it to PANACEA.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Premium Experience',
-    desc: 'More than a shop—it\'s a botanical experience designed to elevate your senses and standards.',
-  },
-  {
-    icon: Heart,
-    title: 'Community-Driven Culture',
-    desc: 'We host events, support local artists, and build a space where culture and community thrive together.',
-  },
-];
+const B = import.meta.env.BASE_URL;
+const GROW_IMG = `${B}b44/1701a1c93.jpg`;
+const EVENT_IMG = `${B}b44/7b302f861.jpg`;
+const ART_IMG = `${B}b44/7e5dd18d8.jpg`;
 
 export default function WhySection() {
   return (
     <section className="py-24 px-6 relative">
-      {/* Ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[180px] rounded-full" />
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[300px] bg-primary/6 blur-[150px] rounded-full" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">The PANACEA Difference</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Why PANACEA</h2>
+        <div className="max-w-2xl mb-14">
+          <p className="text-primary text-xs tracking-[0.4em] uppercase mb-3 font-medium">What Sets Us Apart</p>
+          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide mb-5">Why PANACEA</h2>
+          <p className="text-muted-foreground leading-relaxed text-lg">
+            We're not a gas-station counter and we're not a chain. We're a locally owned garden — grown, curated,
+            and run by people who actually care how you're treated.
+          </p>
         </div>
 
-        {/* Top row: first 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {reasons.slice(0, 3).map((reason, i) => {
-            const Icon = reason.icon;
-            return (
-              <motion.div
-                key={reason.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                  <Icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-medium mb-3 tracking-wide">{reason.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
-              </motion.div>
-            );
-          })}
-        </div>
+        {/* Bento grid — mixed photo + text tiles */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[minmax(0,1fr)]">
 
-        {/* Bottom row: card 4, iguana (center), card 5 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 4 */}
-          {(() => { const reason = reasons[3]; const Icon = reason.icon; return (
-            <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1 self-start"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                <Icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-medium mb-3 tracking-wide">{reason.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
-            </motion.div>
-          ); })()}
-
-          {/* Iguana mascot card — center */}
+          {/* Grown in-house — large photo tile */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1 flex flex-col"
+            className="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden min-h-[340px] group"
           >
-            <div className="w-full rounded-xl overflow-hidden mb-5" style={{ height: '140px' }}>
-              <img
-                src={`${import.meta.env.BASE_URL}b44/e480f5c04.jpg`}
-                alt="PANACEA's Iguana Mascot"
-                className="w-full h-full object-cover object-center opacity-80 hover:opacity-100 transition-opacity duration-500"
-              />
+            <img src={GROW_IMG} alt="PANACEA cultivation" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+            <div className="relative h-full flex flex-col justify-end p-8">
+              <div className="w-11 h-11 rounded-xl bg-primary/20 backdrop-blur flex items-center justify-center mb-4">
+                <Sprout className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-wide mb-2">Grown &amp; Curated In-House</h3>
+              <p className="text-white/70 leading-relaxed max-w-md">
+                We know where what we carry comes from — cultivated and curated with intention, not pulled from an anonymous
+                catalog. What's on our shelves, we stand behind.
+              </p>
             </div>
-            <h3 className="text-lg font-medium mb-3 tracking-wide">We Have an Iguana! 🦎</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Our unofficial mascot calls PANACEA home. Name TBD — come meet them in-store.</p>
           </motion.div>
 
-          {/* Card 5 */}
-          {(() => { const reason = reasons[4]; const Icon = reason.icon; return (
-            <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1 self-start"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                <Icon className="w-6 h-6 text-primary" />
+          {/* Knowledgeable staff — text tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="glass-card glass-card-hover rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1"
+          >
+            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+              <Users className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2 tracking-wide">Real, No-Pressure Guidance</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Our team lives the culture and walks you through every option — first visit or fiftieth. No upsell, no rush.
+            </p>
+          </motion.div>
+
+          {/* Compliance / trust — text tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="glass-card glass-card-hover rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1"
+          >
+            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+              <ShieldCheck className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2 tracking-wide">21+ · Lab-Tested · Compliant</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Hemp-derived products kept in line with Texas law. Certificates of analysis available — just ask.
+            </p>
+          </motion.div>
+
+          {/* Events — photo tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="relative rounded-2xl overflow-hidden min-h-[240px] group"
+          >
+            <img src={EVENT_IMG} alt="PANACEA backyard event" className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            <div className="relative h-full flex flex-col justify-end p-7">
+              <div className="w-11 h-11 rounded-xl bg-primary/20 backdrop-blur flex items-center justify-center mb-4">
+                <PartyPopper className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-lg font-medium mb-3 tracking-wide">{reason.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
-            </motion.div>
-          ); })()}
+              <h3 className="text-lg font-semibold mb-1.5 tracking-wide">A Backyard, Not a Counter</h3>
+              <p className="text-sm text-white/70 leading-relaxed">Comedy nights, live music, and vendor markets — where Corpus comes to gather.</p>
+            </div>
+          </motion.div>
+
+          {/* Local art — photo tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="relative rounded-2xl overflow-hidden min-h-[240px] group"
+          >
+            <img src={ART_IMG} alt="Local art on display at PANACEA" className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            <div className="relative h-full flex flex-col justify-end p-7">
+              <div className="w-11 h-11 rounded-xl bg-primary/20 backdrop-blur flex items-center justify-center mb-4">
+                <Palette className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-1.5 tracking-wide">Local Art on the Walls</h3>
+              <p className="text-sm text-white/70 leading-relaxed">Original work from Corpus Christi artists, rotating throughout the year.</p>
+            </div>
+          </motion.div>
+
+          {/* Locally owned — text tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1"
+          >
+            <div>
+              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <MapPin className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2 tracking-wide">Rooted in Corpus Christi</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Independent and local — built for this city, on Everhart Rd.
+              </p>
+            </div>
+            <Link to="/about" className="text-primary text-sm font-medium tracking-wide mt-4 hover:underline">Our story →</Link>
+          </motion.div>
+
         </div>
       </div>
     </section>
