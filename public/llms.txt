@@ -1,6 +1,6 @@
 # PANACEA Hash Garden
 
-> Premium 21+ smoke shop and botanical apothecary in Corpus Christi, Texas. PANACEA grows its own flower and makes its own concentrates and edibles — plus artisan glass, THC beverages, accessories, and branded merch. It's also a community venue hosting comedy, live music, and local art & vendor markets.
+> Premium 21+ smoke shop and botanical apothecary in Corpus Christi, Texas. PANACEA carries hemp-derived THC seltzers, house-made edibles, artisan glass, accessories, and branded merch. It's also a community venue hosting comedy, live music, and local art & vendor markets.
 
 - Address: 4914 Everhart Rd, Corpus Christi, TX 78411
 - Phone: (361) 752-4168
@@ -12,7 +12,7 @@
 ## Pages
 
 - [Home](https://panaceastx.com/): Overview of the shop, categories, events, merch, and location
-- [Products](https://panaceastx.com/products): In-store catalog — house-grown flower, in-house concentrates, glass, THC drinks, homemade edibles, accessories
+- [Products](https://panaceastx.com/products): In-store catalog — hemp-derived THC drinks, homemade edibles, artisan glass, accessories
 - [Events](https://panaceastx.com/events): Backyard comedy nights, live music, art & vendor markets, events calendar, and performer/vendor booking
 - [Merch](https://panaceastx.com/merch): PANACEA-branded apparel (hoodies, caps, jackets, tees, backpacks) shipped via the online store, plus original paintings from local Corpus Christi artists in-store
 - [About](https://panaceastx.com/about): Founder Rene Pena's story, the "grown, made, crafted" philosophy, and the approach to cannabis genetics and cultivation
@@ -20,5 +20,5 @@
 
 ## Notes
 
-- PANACEA sells federally legal hemp-derived products to adults 21 and over in compliance with Texas law.
-- The shop grows its own flower and produces its own concentrates and edibles for full transparency and quality control.
+- PANACEA sells federally legal hemp-derived products to adults 21 and over in compliance with applicable Texas law; product selection changes as Texas hemp regulations evolve.
+- The shop cultivates its own hemp and produces its own edibles for transparency and quality control.

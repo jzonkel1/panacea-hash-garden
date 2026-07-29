@@ -115,7 +115,7 @@ export default function About() {
               {
                 icon: Leaf,
                 title: 'Grown In-House',
-                desc: 'We cultivate our own hemp flower — grown, cured, and hand-finished. Our genetics program means we know each cultivar from the ground up.',
+                desc: 'We cultivate our own hemp — grown with care in living soil. Our genetics program means we know each cultivar from the ground up.',
               },
               {
                 icon: FlaskConical,
@@ -191,10 +191,10 @@ export default function About() {
               Our work in cannabis genetics is driven by a simple but powerful goal: to create cultivars that perform exceptionally in all growing environments, while truly thriving in living soil. By focusing on varieties that are naturally vigorous, resilient, and adaptable, we aim to give cultivators genetics they can trust — whether they grow indoors, outdoors, or in greenhouses.
             </p>
             <p>
-              At the heart of our breeding program is an obsession with trichome development. Trichomes are where the plant's most valuable compounds are produced, and we select relentlessly for density, structure, and resilience of resin heads. Our genetics are designed to push trichome production to its fullest potential, supporting high cannabinoid content and superior extraction yields while maintaining the integrity and complexity of the plant's natural resin profile.
+              At the heart of our breeding program is an obsession with healthy, expressive plants. We select relentlessly for structure, vigor, and resilience, aiming to preserve the integrity and complexity of each cultivar's natural character — plants that look, smell, and grow the way the plant intended.
             </p>
             <p>
-              Equally important is our focus on terpene expression. We are committed to developing truly distinctive and flavorful terpene profiles that go beyond the familiar. By carefully pairing complementary lines and rigorously selecting standout phenotypes, we seek to create cultivars that deliver layered, memorable aromas and flavors — profiles that reflect both their genetic heritage and the rich microbial life of living soil. The result is a portfolio of genetics that delivers not just potency, but a complete sensory experience: deeply aromatic, flavorful, and expressive plants, grown from the ground up.
+              Equally important is our focus on terpene expression. We are committed to developing truly distinctive and flavorful terpene profiles that go beyond the familiar. By carefully pairing complementary lines and rigorously selecting standout phenotypes, we seek to create cultivars that deliver layered, memorable aromas and flavors — profiles that reflect both their genetic heritage and the rich microbial life of living soil. The result is a portfolio of genetics that delivers a complete sensory experience: deeply aromatic, flavorful, and expressive plants, grown from the ground up.
             </p>
           </div>
 

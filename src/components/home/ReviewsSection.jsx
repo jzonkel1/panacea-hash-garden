@@ -5,16 +5,8 @@ import { Link } from 'react-router-dom';
 
 const reviews = [
   {
-    name: 'Jason M.',
-    text: 'I only bought a gram of THCa flower but it was excellent. Smelled good, looked good and was sticky. The bud was fresh and has a 10/10 high. Next time I\'m in the area I\'m buying an ounce. I went to 3 or 4 other places and their stuff was not the same quality as this place.',
-  },
-  {
     name: 'Dina T.',
     text: 'Comedy show… does CC have a secret gem? Yes!!!! Great products. Cool people. And if they put on another event, I want to come back. They had cool vendors too with food and drinks available for the event.',
-  },
-  {
-    name: 'DatTexasBoi',
-    text: 'Solid flower. I had low expectations from the outside but was actually a super dope spot.',
   },
   {
     name: 'Angie F.',
@@ -35,10 +27,6 @@ const reviews = [
   {
     name: 'Anthony W.',
     text: 'Wonderful and friendly environment, and great customer service. Recommend highly.',
-  },
-  {
-    name: 'Scott W.',
-    text: 'Sometimes they even host entertaining events like comedy shows. Whenever I leave here, it\'s floating on a cloud.',
   },
   {
     name: 'Thirdcoast Hemp',
