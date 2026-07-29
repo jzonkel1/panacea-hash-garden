@@ -2,7 +2,7 @@
 export const SITE = {
   name: 'PANACEA Hash Garden',
   // Public URL of the deployed site (no trailing slash). Update when a custom domain goes live.
-  url: 'https://jzonkel1.github.io/panacea-hash-garden',
+  url: 'https://panaceastx.com',
   phone: '(361) 752-4168',
   phoneHref: 'tel:+13617524168',
   address: {

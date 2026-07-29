@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 // Netlify sets URL to the site's primary address; fall back to the GitHub Pages URL.
-const SITE_URL = (process.env.URL || 'https://jzonkel1.github.io/panacea-hash-garden').replace(/\/$/, '');
+const SITE_URL = (process.env.URL || 'https://panaceastx.com').replace(/\/$/, '');
 
 const meta = JSON.parse(readFileSync(join(root, 'src', 'seo', 'meta.json'), 'utf8'));
 

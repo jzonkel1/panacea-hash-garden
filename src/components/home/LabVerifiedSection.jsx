@@ -83,13 +83,6 @@ export default function LabVerifiedSection() {
               })}
             </div>
 
-            <button
-              onClick={() => openAt(index)}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wide hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20"
-            >
-              <FlaskConical className="w-4 h-4" />
-              View Certificates of Analysis
-            </button>
           </motion.div>
 
           {/* Certificates — full grid on desktop, single + carousel on mobile */}
