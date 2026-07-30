@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Wine, Cookie, Sparkles, Wrench, MapPin } from 'lucide-react';
 
 const DRINKS_IMG = `${import.meta.env.BASE_URL}b44/cd1d1ce9a.jpeg`;
-const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/bc1f23666.jpg`;
+const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/4470748cb.jpg`;
 const EDIBLES2_IMG = `${import.meta.env.BASE_URL}b44/6ecfadbbb.jpg`;
 const GRINDER_IMG = `${import.meta.env.BASE_URL}b44/4eb149aeb.jpeg`;
 const GLASS_IMG = `${import.meta.env.BASE_URL}b44/a50809387.JPG`;
@@ -20,7 +20,7 @@ const categories = [
 const products = [
   { name: 'THC Seltzers', category: 'drinks', price: '$6 – $12', desc: 'Brio Pop, Sherpa, Knotty Times and more. Hemp-derived, cold and ready to drink.', image: DRINKS_IMG, badge: 'Popular' },
   { name: 'Highly Delicious Baked Goods', category: 'edibles', price: '$8 – $25', desc: 'Fresh baked cookies, brownies, and more from Highly Delicious.', image: EDIBLES_IMG },
-  { name: 'Gummies & Chocolates', category: 'edibles', price: '$10 – $35', desc: 'Infused gummies and chocolates in various strengths and flavors.', image: EDIBLES2_IMG },
+  { name: 'Gummies & Chocolates', category: 'edibles', price: '$10 – $35', desc: 'Infused gummies and chocolates in various strengths and flavors.', image: EDIBLES2_IMG, imgPos: 'object-[center_70%]' },
   { name: 'Artisan Glass Pipes', category: 'glass', price: '$15 – $200+', desc: 'Handblown glass pipes, bubblers, and water pipes from local and national artists.', image: GLASS_IMG },
   { name: 'Rolling Papers & Wraps', category: 'accessories', price: '$2 – $15', desc: 'RAW, Elements, hemp wraps, and more. All the essentials.', image: ROLLING_PAPERS_IMG },
   { name: 'Storage & Accessories', category: 'accessories', price: '$5 – $50', desc: 'Grinders, stash jars, trays, lighters, and everything you need.', image: GRINDER_IMG },
@@ -89,7 +89,7 @@ export default function Products() {
               >
                 {product.image ? (
                   <div className={`overflow-hidden relative ${product.showcase ? 'aspect-square' : 'h-52'}`}>
-                    <img src={product.image} alt={product.name} className={`w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-75 group-hover:opacity-95 ${product.showcase ? 'object-contain' : 'object-cover'}`} />
+                    <img src={product.image} alt={product.name} className={`w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-75 group-hover:opacity-95 ${product.showcase ? 'object-contain' : 'object-cover'} ${product.imgPos || ''}`} />
                     {product.badge && (
                       <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-medium tracking-wide">
                         {product.badge}
