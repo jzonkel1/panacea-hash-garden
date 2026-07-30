@@ -48,7 +48,7 @@ export default function WhySection() {
       <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-[0.85fr_1fr] gap-14 lg:gap-20 items-start">
 
         {/* Intro + photo */}
-        <div className="text-center lg:text-left lg:sticky lg:top-28">
+        <div className="text-center lg:text-left">
           <Eyebrow className="mb-4">What Sets Us Apart</Eyebrow>
           <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-wide mb-5">Why PANACEA</h2>
           <p className="text-muted-foreground leading-relaxed text-lg max-w-md mx-auto lg:mx-0 mb-8">
@@ -65,7 +65,7 @@ export default function WhySection() {
             <img src={GROW_IMG} alt="Inside the PANACEA garden" className="w-full h-64 lg:h-80 object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
             <figcaption className="absolute bottom-4 inset-x-0 lg:inset-x-auto lg:left-5 text-center lg:text-left text-[11px] tracking-[0.28em] uppercase text-white/80">
-              Grown on-site · Corpus Christi
+              Grown right here in South Texas
             </figcaption>
           </motion.figure>
         </div>

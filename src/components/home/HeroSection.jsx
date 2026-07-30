@@ -164,6 +164,12 @@ export default function HeroSection() {
           >
             Browse Our Merch
           </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-1.5 py-3.5 text-sm text-[#9a9a8e] underline underline-offset-4 decoration-white/20 transition-colors duration-300 hover:text-primary hover:decoration-primary/50"
+          >
+            Questions about availability? Ask us
+          </Link>
         </motion.div>
 
       </div>
