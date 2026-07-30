@@ -129,6 +129,17 @@ export default function Footer() {
               21+ ONLY
             </p>
           </div>
+          <p className="text-center text-xs text-muted-foreground/40">
+            Site by{' '}
+            <a
+              href="https://zonkelmedia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Zonkel Media
+            </a>
+          </p>
         </div>
       </div>
     </footer>
