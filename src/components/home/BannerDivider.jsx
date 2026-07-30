@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BANNER_URL = `${import.meta.env.BASE_URL}b44/banner-ultrawide.png`;
+const BANNER_URL = `${import.meta.env.BASE_URL}b44/banner-ultrawide.jpg`;
 
 export default function BannerDivider() {
   return (

@@ -18,7 +18,7 @@ const localBusiness = {
   '@id': `${SITE_URL}/#business`,
   name: 'PANACEA Hash Garden',
   description:
-    'Premium 21+ smoke shop and botanical apothecary in Corpus Christi, TX. House-grown flower, in-house concentrates and edibles, artisan glass, THC beverages, branded merch, and live events including comedy and music nights.',
+    'Premium 21+ smoke shop and botanical apothecary in Corpus Christi, TX. Hemp-derived THC seltzers, house-made edibles, artisan glass, branded merch, and live events including comedy and music nights.',
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og.jpg`,
   telephone: '+1-361-752-4168',
@@ -43,9 +43,10 @@ const localBusiness = {
     'https://www.instagram.com/rene.pena.39/',
     'https://panaceahg.printful.me/',
   ],
+  hasMap: 'https://maps.google.com/?q=4914+Everhart+Rd,+Corpus+Christi,+TX+78411',
   priceRange: '$$',
   keywords:
-    'smoke shop, hash garden, THCA flower, concentrates, glass, edibles, THC drinks, hemp, Corpus Christi',
+    'smoke shop, hash garden, THC drinks, THC seltzers, edibles, artisan glass, hemp, Corpus Christi',
 };
 
 const html = readFileSync(join(dist, 'index.html'), 'utf8');

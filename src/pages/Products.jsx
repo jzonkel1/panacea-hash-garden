@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Wine, Cookie, Sparkles, Wrench, MapPin } from 'lucide-react';
 
 const DRINKS_IMG = `${import.meta.env.BASE_URL}b44/cd1d1ce9a.jpeg`;
-const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/bc1f23666.png`;
-const EDIBLES2_IMG = `${import.meta.env.BASE_URL}b44/6ecfadbbb.png`;
+const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/bc1f23666.jpg`;
+const EDIBLES2_IMG = `${import.meta.env.BASE_URL}b44/6ecfadbbb.jpg`;
 const GRINDER_IMG = `${import.meta.env.BASE_URL}b44/4eb149aeb.jpeg`;
 const GLASS_IMG = `${import.meta.env.BASE_URL}b44/a50809387.JPG`;
 const ROLLING_PAPERS_IMG = `${import.meta.env.BASE_URL}b44/7a23ded7e.jpeg`;
