@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Wine, Cookie, Sparkles, Wrench } from 'lucide-react';
+import { Leaf, Droplets, Wine, Cookie, Sparkles, Wrench } from 'lucide-react';
 
+const FLOWER_IMG = `${import.meta.env.BASE_URL}b44/aac55d1a6.jpg`;
+const CONCENTRATE_IMG = `${import.meta.env.BASE_URL}b44/cd83be047.jpg`;
 const DRINKS_IMG = `${import.meta.env.BASE_URL}b44/cd1d1ce9a.jpeg`;
 const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/4470748cb.jpg`;
 const GRINDER_IMG = `${import.meta.env.BASE_URL}b44/4eb149aeb.jpeg`;
 const GLASS_IMG = `${import.meta.env.BASE_URL}b44/a50809387.JPG`;
 
 const categories = [
+  { name: 'Flower', id: 'flower', desc: 'Hand-selected premium strains', icon: Leaf, image: FLOWER_IMG },
+  { name: 'Concentrates', id: 'concentrates', desc: 'Potent extracts & dabs', icon: Droplets, image: CONCENTRATE_IMG },
   { name: 'THC Drinks', id: 'drinks', desc: 'Hemp-derived seltzers & beverages', icon: Wine, image: DRINKS_IMG },
   { name: 'Edibles', id: 'edibles', desc: 'Gummies, baked goods & more', icon: Cookie, image: EDIBLES_IMG },
   { name: 'Glass', id: 'glass', desc: 'Artisan pipes & rigs', icon: Sparkles, image: GLASS_IMG },
@@ -24,7 +28,7 @@ export default function CategoriesSection() {
           <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-wide">Featured Categories</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat, i) => {
             const Icon = cat.icon;
             return (

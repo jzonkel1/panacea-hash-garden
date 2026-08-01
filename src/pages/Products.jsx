@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Wine, Cookie, Sparkles, Wrench, MapPin } from 'lucide-react';
+import { Leaf, Droplets, Wine, Cookie, Sparkles, Wrench, MapPin } from 'lucide-react';
 
+const FLOWER_IMG = `${import.meta.env.BASE_URL}b44/aac55d1a6.jpg`;
+const FLOWER2_IMG = `${import.meta.env.BASE_URL}b44/b86cd6422.jpg`;
+const CONCENTRATE_IMG = `${import.meta.env.BASE_URL}b44/cd83be047.jpg`;
 const DRINKS_IMG = `${import.meta.env.BASE_URL}b44/cd1d1ce9a.jpeg`;
 const EDIBLES_IMG = `${import.meta.env.BASE_URL}b44/4470748cb.jpg`;
 const EDIBLES2_IMG = `${import.meta.env.BASE_URL}b44/6ecfadbbb.jpg`;
@@ -11,6 +14,8 @@ const ROLLING_PAPERS_IMG = `${import.meta.env.BASE_URL}b44/7a23ded7e.jpeg`;
 
 const categories = [
   { id: 'all', label: 'All Products', icon: Sparkles },
+  { id: 'flower', label: 'Flower', icon: Leaf },
+  { id: 'concentrates', label: 'Concentrates', icon: Droplets },
   { id: 'glass', label: 'Glass', icon: Sparkles },
   { id: 'drinks', label: 'THC Drinks', icon: Wine },
   { id: 'edibles', label: 'Edibles', icon: Cookie },
@@ -18,7 +23,10 @@ const categories = [
 ];
 
 const products = [
-  { name: 'THC Seltzers', category: 'drinks', price: '$6 – $12', desc: 'Brio Pop, Sherpa, Knotty Times and more. Hemp-derived, cold and ready to drink.', image: DRINKS_IMG, badge: 'Popular' },
+  { name: 'Premium Indoor Flower', category: 'flower', price: '$12 – $60', desc: 'Hand-trimmed, locally grown premium strains. Multiple options available in-store.', image: FLOWER_IMG, badge: 'Popular' },
+  { name: 'Exotic Strains', category: 'flower', price: '$15 – $75', desc: 'Rare and exotic cultivars rotated regularly. Ask our staff about current availability.', image: FLOWER2_IMG, badge: 'Limited' },
+  { name: 'Live Resin Concentrates', category: 'concentrates', price: '$25 – $65', desc: 'Full-spectrum live resin for the ultimate terpene experience.', image: CONCENTRATE_IMG },
+  { name: 'THC Seltzers', category: 'drinks', price: '$6 – $12', desc: 'Brio Pop, Sherpa, Knotty Times and more. Hemp-derived, cold and ready to drink.', image: DRINKS_IMG, badge: 'New' },
   { name: 'Highly Delicious Baked Goods', category: 'edibles', price: '$8 – $25', desc: 'Fresh baked cookies, brownies, and more from Highly Delicious.', image: EDIBLES_IMG },
   { name: 'Gummies & Chocolates', category: 'edibles', price: '$10 – $35', desc: 'Infused gummies and chocolates in various strengths and flavors.', image: EDIBLES2_IMG, imgPos: 'object-[center_70%]' },
   { name: 'Artisan Glass Pipes', category: 'glass', price: '$15 – $200+', desc: 'Handblown glass pipes, bubblers, and water pipes from local and national artists.', image: GLASS_IMG },
