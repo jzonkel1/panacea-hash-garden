@@ -66,7 +66,11 @@ export default function AgeGate({ onVerified }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      // Opaque from the very first frame, deliberately. The site is mounted
+      // underneath this overlay so crawlers can read it, which means any fade-IN
+      // here shows an unverified visitor the content behind the gate. Only the
+      // exit animates.
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-black"

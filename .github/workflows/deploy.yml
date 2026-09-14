@@ -24,6 +24,10 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # The prerender step drives headless Chrome. npm ci normally triggers
+      # puppeteer's postinstall, but install it explicitly so a cached or
+      # skipped postinstall cannot leave the build without a browser.
+      - run: npx --yes puppeteer browsers install chrome
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

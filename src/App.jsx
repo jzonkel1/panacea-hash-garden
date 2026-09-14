@@ -12,6 +12,8 @@ import Events from './pages/Events';
 import Merch from './pages/Merch';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path="/merch" element={<Merch />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
